@@ -13,10 +13,10 @@ public class Display {
 	private String title;
 	private int width, height;
 	
-	public Display(String title, int with, int height){
-		this.title = title;
-		this.width = with;
-		this.height = height;
+	public Display(){
+		title = "from nothing to Boss";
+		width = 1900;
+		height = 1000;
 		
 		createDisplay();
 	}
