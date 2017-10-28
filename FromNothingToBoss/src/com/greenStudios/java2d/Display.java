@@ -1,10 +1,14 @@
 package com.greenStudios.java2d;
 
+import java.awt.Canvas;
+
 import javax.swing.JFrame;
 
 public class Display {
 	
 	private JFrame frame;
+	private Canvas canvas;
+	
 	private String title;
 	private int width, height;
 	
@@ -22,7 +26,8 @@ public class Display {
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
-		frame.set
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
 		
 	}
 
