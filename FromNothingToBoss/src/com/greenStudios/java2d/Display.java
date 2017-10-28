@@ -5,19 +5,24 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import com.greenStudios.listeners.FNTBKeyListener;
+
 public class Display {
 
 	private JFrame frame;
 	private Canvas canvas;
+	private FNTBKeyListener keylis;
 
 	private String title;
 	private int width, height;
 
-	public Display() {
+	public Display(FNTBKeyListener keylis) {
 		title = "From Nothing To Boss";
 		width = 1280;
 		height = 720;
-
+		
+		this.keylis = keylis;
+		
 		createDisplay();
 	}
 
@@ -34,6 +39,8 @@ public class Display {
 		canvas.setPreferredSize(new Dimension(width, height));
 		canvas.setMaximumSize(new Dimension(width, height));
 		canvas.setMinimumSize(new Dimension(width, height));
+		frame.setFocusable(true);
+		frame.addKeyListener(keylis);
 
 		frame.add(canvas);
 		frame.pack();
