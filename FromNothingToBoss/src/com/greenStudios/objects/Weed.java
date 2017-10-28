@@ -1,5 +1,7 @@
 package com.greenStudios.objects;
 
-public class Weed {
+public class Weed extends Drug{
+	
+	
 
 }

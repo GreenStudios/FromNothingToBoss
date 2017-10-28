@@ -14,9 +14,9 @@ public class Display {
 	private int width, height;
 
 	public Display() {
-		title = "from nothing to Boss";
-		width = 1900;
-		height = 1000;
+		title = "From Nothing To Boss";
+		width = 1280;
+		height = 720;
 
 		createDisplay();
 	}
