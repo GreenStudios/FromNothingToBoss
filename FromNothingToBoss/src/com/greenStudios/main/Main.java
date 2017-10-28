@@ -2,23 +2,26 @@ package com.greenStudios.main;
 
 import com.greenStudios.objects.WorldController;
 
-public class Main implements Runnable{
+public class Main implements Runnable {
 
 	private Thread mainThread;
-	private boolean running;
+	private boolean running = false;
 
 	public Main() {
-		running = false;
+		new WorldController();
 		start();
 	}
+//------------------------------------------------------------------------------------
+	private void tick() {
 
-	private void init() {
-		new WorldController();
+	}
+
+	private void render() {
+
 	}
 
 	// GameLoop
 	public void run() {
-		init();
 		while (running) {
 			tick();
 			render();
@@ -40,21 +43,10 @@ public class Main implements Runnable{
 			return;
 		}
 		running = false;
-
 		try {
 			mainThread.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-	private void tick() {
-
-	}
-
-	private void render() {
-
-	}
-
 }
