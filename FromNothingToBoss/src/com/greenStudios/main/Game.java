@@ -1,15 +1,12 @@
 package com.greenStudios.main;
 
 import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.java2d.Display;
-import com.greenStudios.java2d.ImageLoader;
-import com.greenStudios.java2d.SpriteSheet;
+import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.FNTBKeyListener;
 import com.greenStudios.main.states.GameState;
 import com.greenStudios.main.states.MenuState;
@@ -28,13 +25,19 @@ public class Game implements Runnable {
 	
 	private State gameState;
 	private State menuState;
-
+	
+	//Camera
+	private GameCamera gameCamera;
+	
 	public Game() {
-		// ---init------		
+		// ---initialization------		
 		display = new Display();
 		keyListener = new FNTBKeyListener();
 		display.getFrame().addKeyListener(keyListener);
 		Assets.init();
+		
+		gameCamera = new GameCamera(this, 0, 0);
+		
 		this.canvas = display.getCanvas();
 		//---States-----------------
 		gameState = new GameState(this);
@@ -104,6 +107,18 @@ public class Game implements Runnable {
 			}
 		}
 		stop();
+	}
+	
+	public GameCamera getGameCamera() {
+		return gameCamera;
+	}
+	
+	public int getWidth() {
+		return display.getWidth();
+	}
+	
+	public int getHeight() {
+		return display.getHeight();
 	}
 
 	public synchronized void start() {
