@@ -40,7 +40,7 @@ public class Player extends Creature {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(ImageLoader.loadImage("/textures/playerRunning.png"), (int) x, (int) y, width, height, null);
+		g.drawImage(ImageLoader.loadImage("/textures/player/playerFront.png"), (int) x, (int) y, null);
 	}
 
 }
