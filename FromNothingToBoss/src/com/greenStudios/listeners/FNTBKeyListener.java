@@ -3,7 +3,8 @@ package com.greenStudios.listeners;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import com.greenStudios.objects.WorldController;
+import com.greenStudios.main.Game;
+import com.greenStudios.world.WorldController;
 
 public class FNTBKeyListener implements KeyListener {
 	public enum KeyPressed {
