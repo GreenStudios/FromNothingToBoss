@@ -6,11 +6,9 @@ import com.greenStudios.java2d.ImageLoader;
 import com.greenStudios.main.Game;
 public class Player extends Creature {
 
-	private Game game;
 	
 	public Player(Game game, float x, float y) {
-		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEAFUALT_CREATURE_HEIGHT);
-		this.game = game;
+		super(game, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEAFUALT_CREATURE_HEIGHT);
 		movementSpeed = Creature.DEFAULT_SPEED;
 	}
 
@@ -18,6 +16,7 @@ public class Player extends Creature {
 	public void tick() {
 		getInput();
 		move();
+		game.getGameCamera().centerOnEntity(this);
 	}
 	
 	private void getInput(){
@@ -40,7 +39,7 @@ public class Player extends Creature {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(ImageLoader.loadImage("/textures/player/playerFront.png"), (int) x, (int) y, null);
+		g.drawImage(ImageLoader.loadImage("/textures/player/playerFront.png"), (int) (x - game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()), null);
 	}
 
 }

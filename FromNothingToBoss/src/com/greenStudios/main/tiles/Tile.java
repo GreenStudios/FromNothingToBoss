@@ -3,12 +3,23 @@ package com.greenStudios.main.tiles;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import com.greenStudios.main.tiles.grass.Grass1;
+import com.greenStudios.main.tiles.grass.Grass2;
+import com.greenStudios.main.tiles.grass.Grass3;
+import com.greenStudios.main.tiles.grass.Grass4;
+import com.greenStudios.main.tiles.grass.Grass5;
+
 public class Tile {
 	
 	//STATIC STUFF HERE
+	//Tile Initialization
 	
-	public static Tile[] tiles = new Tile[256];
-	public static Tile grassTile = new GrassTile(0);
+	public static Tile[] tiles = new Tile[512];
+	public static Tile grass1 = new Grass1(0);
+	public static Tile grass2 = new Grass2(1);
+	public static Tile grass3 = new Grass3(2);
+	public static Tile grass4 = new Grass4(3);
+	public static Tile grass5 = new Grass5(4);
 	
 	//CLASS
 	
