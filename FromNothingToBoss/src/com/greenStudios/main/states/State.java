@@ -2,6 +2,8 @@ package com.greenStudios.main.states;
 
 import java.awt.Graphics;
 
+import com.greenStudios.main.Game;
+
 public abstract class State {
 	
 	private static State currentState = null;
@@ -13,6 +15,12 @@ public abstract class State {
 	public static State getState(){
 		return currentState;
 		
+	}
+	
+	protected Game game;
+	
+	public State(Game game){
+		this.game = game;
 	}
 	
 	public abstract void tick();

@@ -4,46 +4,32 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import com.greenStudios.main.Game;
-import com.greenStudios.world.WorldController;
 
 public class FNTBKeyListener implements KeyListener {
-	public enum KeyPressed {
-		UP, DOWN, LEFT, RIGHT, STOP
-	}
+	
+	private boolean[] keys;
+	public boolean up, down, left, right;
 
-	private final WorldController controller;
-
-	public FNTBKeyListener(WorldController controller) {
+	public FNTBKeyListener() {
 		super();
-		this.controller = controller;
-
+		keys = new boolean[256];
+	}
+	
+	public void tick(){
+		up = keys[KeyEvent.VK_UP];
+		down = keys[KeyEvent.VK_DOWN];
+		left = keys[KeyEvent.VK_LEFT];
+		right = keys[KeyEvent.VK_RIGHT];
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-		switch (keyCode) {
-		case KeyEvent.VK_UP:
-			controller.onKeypressed(KeyPressed.UP);
-			break;
-		case KeyEvent.VK_DOWN:
-			controller.onKeypressed(KeyPressed.DOWN);
-			break;
-		case KeyEvent.VK_LEFT:
-			controller.onKeypressed(KeyPressed.LEFT);
-			break;
-		case KeyEvent.VK_RIGHT:
-			controller.onKeypressed(KeyPressed.RIGHT);
-			break;
-		default:
-			break;
-		}
-
+		keys[e.getKeyCode()] = true;
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {
-		controller.onKeypressed(KeyPressed.STOP);
+	public void keyReleased(KeyEvent e) {
+		keys[e.getKeyCode()] = false;
 	}
 
 	@Override
