@@ -6,15 +6,11 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import com.greenStudios.listeners.FNTBKeyListener;
-import com.greenStudios.world.WorldController;
 
 public class Display {
 
-	private WorldController controller;
-	
 	private JFrame frame;
 	private Canvas canvas;
-	private FNTBKeyListener keylistener;
 
 	private String title;
 	private int width, height;
@@ -23,8 +19,6 @@ public class Display {
 		title = "From Nothing To Boss";
 		width = 1280;
 		height = 720;
-		controller = new WorldController(this,keylistener);
-		keylistener = new FNTBKeyListener(controller);
 		
 		createDisplay();
 	}
@@ -44,8 +38,8 @@ public class Display {
 		canvas.setPreferredSize(new Dimension(width, height));
 		canvas.setMaximumSize(new Dimension(width, height));
 		canvas.setMinimumSize(new Dimension(width, height));
+		canvas.setFocusable(false);
 		frame.setFocusable(true);
-		frame.addKeyListener(keylistener);
 
 		frame.add(canvas);
 		frame.pack();
@@ -59,6 +53,10 @@ public class Display {
 	}
 	public int getHeight(){
 		return height;
+	}
+	public JFrame getFrame(){
+		return frame;
+		
 	}
 
 }

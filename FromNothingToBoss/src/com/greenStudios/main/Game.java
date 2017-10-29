@@ -11,15 +11,14 @@ import com.greenStudios.java2d.Display;
 import com.greenStudios.java2d.ImageLoader;
 import com.greenStudios.java2d.SpriteSheet;
 import com.greenStudios.listeners.FNTBKeyListener;
-import com.greenStudios.listeners.FNTBKeyListener.KeyPressed;
 import com.greenStudios.main.states.GameState;
 import com.greenStudios.main.states.MenuState;
 import com.greenStudios.main.states.State;
-import com.greenStudios.world.WorldController;
 
 public class Game implements Runnable {
 
 	private final Display display;
+	private final FNTBKeyListener keyListener;
 	
 	private boolean running;
 	private Thread mainThread;
@@ -31,15 +30,15 @@ public class Game implements Runnable {
 	private State menuState;
 
 	public Game() {
-		// ---init------
-		
+		// ---init------		
 		display = new Display();
-
+		keyListener = new FNTBKeyListener();
+		display.getFrame().addKeyListener(keyListener);
 		Assets.init();
 		this.canvas = display.getCanvas();
 		//---States-----------------
-		gameState = new GameState();
-		menuState = new MenuState();
+		gameState = new GameState(this);
+		menuState = new MenuState(this);
 		State.setState(gameState);
 		// -------------------------
 		start();
@@ -47,6 +46,8 @@ public class Game implements Runnable {
 
 	// ------------------------------------------------------------------------------------
 	private void tick() {
+		keyListener.tick();
+		
 		if(State.getState() != null){
 			State.getState().tick();
 		}
@@ -124,5 +125,10 @@ public class Game implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public FNTBKeyListener getKeyListener(){
+		return keyListener;
+		
 	}
 }
