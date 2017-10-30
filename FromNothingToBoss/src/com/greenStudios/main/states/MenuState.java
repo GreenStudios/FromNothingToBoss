@@ -2,12 +2,12 @@ package com.greenStudios.main.states;
 
 import java.awt.Graphics;
 
-import com.greenStudios.main.Game;
+import com.greenStudios.main.Handler;
 
 public class MenuState extends State{
 
-	public MenuState(Game game){
-		super(game);
+	public MenuState(Handler handler){
+		super(handler);
 	}
 	
 	@Override

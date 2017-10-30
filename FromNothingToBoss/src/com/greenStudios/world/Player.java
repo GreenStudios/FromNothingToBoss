@@ -3,12 +3,12 @@ package com.greenStudios.world;
 import java.awt.Graphics;
 
 import com.greenStudios.java2d.ImageLoader;
-import com.greenStudios.main.Game;
+import com.greenStudios.main.Handler;
 public class Player extends Creature {
 
 	
-	public Player(Game game, float x, float y) {
-		super(game, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEAFUALT_CREATURE_HEIGHT);
+	public Player(Handler handler, float x, float y) {
+		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEAFUALT_CREATURE_HEIGHT);
 		movementSpeed = Creature.DEFAULT_SPEED;
 	}
 
@@ -16,30 +16,30 @@ public class Player extends Creature {
 	public void tick() {
 		getInput();
 		move();
-		game.getGameCamera().centerOnEntity(this);
+		handler.getGameCamera().centerOnEntity(this);
 	}
 	
 	private void getInput(){
 		xMove = 0;
 		yMove = 0;
 		
-		if(game.getKeyListener().up){
+		if(handler.getKeyListener().up){
 			yMove = -movementSpeed;
 		}
-		if(game.getKeyListener().down){
+		if(handler.getKeyListener().down){
 			yMove = movementSpeed;
 		}
-		if(game.getKeyListener().left){
+		if(handler.getKeyListener().left){
 			xMove = -movementSpeed;
 		}
-		if(game.getKeyListener().right){
+		if(handler.getKeyListener().right){
 			xMove = movementSpeed;
 		}
 	}
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(ImageLoader.loadImage("/textures/player/playerFront.png"), (int) (x - game.getGameCamera().getxOffset()), (int) (y - game.getGameCamera().getyOffset()), null);
+		g.drawImage(ImageLoader.loadImage("/textures/player/playerFront.png"), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), null);
 	}
 
 }
