@@ -2,9 +2,7 @@ package com.greenStudios.main.states;
 
 import java.awt.Graphics;
 
-import com.greenStudios.java2d.Assets;
-import com.greenStudios.main.Game;
-import com.greenStudios.main.tiles.Tile;
+import com.greenStudios.main.Handler;
 import com.greenStudios.world.Player;
 import com.greenStudios.world.World;
 
@@ -13,11 +11,12 @@ public class GameState extends State {
 	private Player player;
 	private World world;
 
-	public GameState(Game game) {
-		super(game);
+	public GameState(Handler handler) {
+		super(handler);
 
-		player = new Player(game, 100, 100);
-		world = new World(game, "assets/worlds/world1.txt");
+		world = new World(handler, "assets/worlds/world1.txt");
+		handler.setWorld(world);
+		player = new Player(handler, 100, 100);
 	}
 
 	@Override
