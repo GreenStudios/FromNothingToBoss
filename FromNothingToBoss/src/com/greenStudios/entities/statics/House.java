@@ -9,7 +9,7 @@ import com.greenStudios.main.tiles.Tile;
 
 public class House extends StaticEntity{
 	
-	private boolean drawCollision = true;
+	private boolean drawCollision = false;
 
 	public House(Handler handler, float x, float y) {
 		super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);

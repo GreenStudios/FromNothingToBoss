@@ -5,12 +5,12 @@ import java.awt.event.KeyListener;
 
 import com.greenStudios.main.Game;
 
-public class FNTBKeyListener implements KeyListener {
+public class KeyManager implements KeyListener {
 	
 	private boolean[] keys;
 	public boolean up, down, left, right;
 
-	public FNTBKeyListener() {
+	public KeyManager() {
 		super();
 		keys = new boolean[256];
 	}
