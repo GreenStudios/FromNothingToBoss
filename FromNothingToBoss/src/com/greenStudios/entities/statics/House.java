@@ -25,6 +25,11 @@ public class House extends StaticEntity{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void die() {
+		
+	}
 
 	@Override
 	public void render(Graphics g) {
