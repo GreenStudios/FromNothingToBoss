@@ -15,6 +15,8 @@ public class World {
 	private int height;
 	private int spawnX, spawnY;
 	private int[][] tiles;
+	private int timer;
+	private boolean timerStatus = false;
 	
 	//Entities
 	private EntityManager entityManager;
@@ -34,6 +36,23 @@ public class World {
 	
 	public void tick() {
 		entityManager.tick();
+		getInput();
+		
+		if(timerStatus){
+		timer++;
+		}
+		
+		if(timer == 60*2){
+			timer = 0;
+			timerStatus = false;
+		}
+	}
+	
+	private void getInput(){
+		if(handler.getKeyListener().action && timer == 0){
+			entityManager.addEntity(new WeedPlant(handler, entityManager.getPlayer().getX(), entityManager.getPlayer().getY()));
+			timerStatus = true;
+		}
 	}
 	
 	public void render(Graphics g) {

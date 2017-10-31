@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import com.greenStudios.entities.statics.WeedPlant;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -16,12 +17,15 @@ public class Player extends Creature {
 	private Animation animRight;
 	private int lastAnim;
 	
+	private EntityManager entityManager;
+	
 	private boolean drawCollision = false;
 
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		movementSpeed = Creature.DEFAULT_SPEED;
+		
 		
 		bounds.x = 16;
 		bounds.y = 32;
@@ -71,7 +75,12 @@ public class Player extends Creature {
 		if(handler.getKeyListener().right){
 			xMove = movementSpeed;
 		}
+		if(handler.getKeyListener().action){
+			//entityManager.addEntity(new WeedPlant(handler, (int) getX(), (int) getY()));
+			//System.out.println(handler);
+		}
 	}
+	
 
 	@Override
 	public void render(Graphics g) {
