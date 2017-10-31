@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 	public static final int width = 64, height = 64;
+	public static BufferedImage[] btn_start;
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right;
@@ -16,6 +17,13 @@ public class Assets {
 		SpriteSheet sheetGrass = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetGrass.png"));
 		SpriteSheet sheetWater = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetWater.png"));
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
+		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetMenu.png"));
+		
+		//Menu Buttons
+		btn_start = new BufferedImage[2];
+		
+		btn_start[0] = sheetMenu.crop(0, 0, 320, 240);
+		btn_start[1] = sheetMenu.crop(320, 240, 320, 240);
 		
 		//Player Animations
 		player_down = new BufferedImage[4];

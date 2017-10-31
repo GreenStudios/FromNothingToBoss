@@ -15,7 +15,7 @@ public class Player extends Creature {
 	private Animation animLeft;
 	private Animation animRight;
 	
-	private boolean drawCollision = true;
+	private boolean drawCollision = false;
 
 	
 	public Player(Handler handler, float x, float y) {
