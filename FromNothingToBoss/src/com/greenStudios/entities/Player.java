@@ -14,6 +14,7 @@ public class Player extends Creature {
 	private Animation animUp;
 	private Animation animLeft;
 	private Animation animRight;
+	private int lastAnim;
 	
 	private boolean drawCollision = false;
 
@@ -50,6 +51,10 @@ public class Player extends Creature {
 		handler.getGameCamera().centerOnEntity(this);
 	}
 	
+	public void die() {
+		System.out.println("You died");
+	}
+	
 	private void getInput(){
 		xMove = 0;
 		yMove = 0;
@@ -80,15 +85,19 @@ public class Player extends Creature {
 	
 	private BufferedImage getCurrentAnimationFrame() {
 		if(xMove < 0) {
+			lastAnim = 2;
 			return animLeft.getCurrentFrame();
 		}else if(xMove > 0) {
+			lastAnim = 3;
 			return animRight.getCurrentFrame();
 		}else if(yMove < 0) {
+			lastAnim = 1;
 			return animUp.getCurrentFrame();
 		}else if(yMove > 0){
+			lastAnim = 0;
 			return animDown.getCurrentFrame();
 		}else {
-			return Assets.player_idle;
+			return Assets.player_idle[lastAnim];
 		}	
 	}
 }

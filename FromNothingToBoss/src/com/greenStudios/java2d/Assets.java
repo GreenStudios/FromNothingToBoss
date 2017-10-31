@@ -7,9 +7,9 @@ public class Assets {
 	public static BufferedImage[] btn_start;
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
-	public static BufferedImage[] player_down, player_up, player_left, player_right;
-	public static BufferedImage player_idle;
+	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
 	public static BufferedImage house;
+	public static BufferedImage weedPlant;
 	
 	public static void init(){
 		
@@ -29,7 +29,9 @@ public class Assets {
 		player_down = new BufferedImage[4];
 		player_up = new BufferedImage[4];
 		player_left = new BufferedImage[4];
+		
 		player_right = new BufferedImage[4];
+		player_idle = new BufferedImage[4];
 		
 		player_down[0] = sheetPlayerAnims.crop(0, 2*height, width, height);
 		player_down[1] = sheetPlayerAnims.crop(width, 2*height, width, height);
@@ -51,7 +53,10 @@ public class Assets {
 		player_right[2] = sheetPlayerAnims.crop(0, 3*height, width, height);
 		player_right[3] = sheetPlayerAnims.crop(2*width, 3*height, width, height);
 		
-		player_idle = sheetPlayerAnims.crop(0, 2*height, width, height);
+		player_idle[0] = sheetPlayerAnims.crop(0, 2*height, width, height);
+		player_idle[1] = sheetPlayerAnims.crop(0, 0, width, height);
+		player_idle[2] = sheetPlayerAnims.crop(0, height, width, height);
+		player_idle[3] = sheetPlayerAnims.crop(0, 3*height, width, height);
 		
 		//Grass
 		grass1 = sheetGrass.crop(0, 0, width, height);
@@ -66,6 +71,9 @@ public class Assets {
 		water1 = sheetWater.crop(0, 0, width, height);
 		
 		//House
-		house = ImageLoader.loadImage("/textures/house/house.png");
+		house = ImageLoader.loadImage("/textures/static_entities/house/house.png");
+		
+		//Plants
+		weedPlant = ImageLoader.loadImage("/textures/static_entities/plants/weedPlant.png");
 	}
 }

@@ -9,6 +9,7 @@ public class KeyManager implements KeyListener {
 	
 	private boolean[] keys;
 	public boolean up, down, left, right;
+	public boolean action;
 
 	public KeyManager() {
 		super();
@@ -20,6 +21,8 @@ public class KeyManager implements KeyListener {
 		down = keys[KeyEvent.VK_DOWN];
 		left = keys[KeyEvent.VK_LEFT];
 		right = keys[KeyEvent.VK_RIGHT];
+		
+		action = keys[KeyEvent.VK_SPACE];
 		
 		if(keys[KeyEvent.VK_ESCAPE]){
 			System.exit(0);

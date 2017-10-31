@@ -3,6 +3,7 @@ package com.greenStudios.entities;
 import java.awt.Graphics;
 
 import com.greenStudios.entities.statics.House;
+import com.greenStudios.entities.statics.WeedPlant;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 import com.greenStudios.utils.Utils;
@@ -23,6 +24,7 @@ public class World {
 		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
 		
 		entityManager.addEntity(new House(handler, 2*64, 4*64));
+		entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
 		
 		loadWorld(path);
 		
