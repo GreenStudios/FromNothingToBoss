@@ -1,6 +1,6 @@
-package com.greenStudios.entitys.statics;
+package com.greenStudios.entities.statics;
 
-import com.greenStudios.entitys.Entity;
+import com.greenStudios.entities.Entity;
 import com.greenStudios.main.Handler;
 
 public abstract class StaticEntity extends Entity{

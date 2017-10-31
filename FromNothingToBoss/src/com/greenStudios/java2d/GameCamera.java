@@ -1,6 +1,6 @@
 package com.greenStudios.java2d;
 
-import com.greenStudios.entitys.Entity;
+import com.greenStudios.entities.Entity;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 

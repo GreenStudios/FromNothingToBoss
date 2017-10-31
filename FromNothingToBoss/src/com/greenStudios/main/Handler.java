@@ -1,6 +1,6 @@
 package com.greenStudios.main;
 
-import com.greenStudios.entitys.World;
+import com.greenStudios.entities.World;
 import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.FNTBKeyListener;
 

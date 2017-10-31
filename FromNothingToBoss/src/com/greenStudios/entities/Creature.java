@@ -1,4 +1,4 @@
-package com.greenStudios.entitys;
+package com.greenStudios.entities;
 
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
@@ -7,7 +7,7 @@ public abstract class Creature extends Entity{
 
 	public static final int DEFAULT_HEALTH = 100;
 	public static final float DEFAULT_SPEED = 2;
-	public static final int DEFAULT_CREATURE_WIDTH = 64, DEAFUALT_CREATURE_HEIGHT = 64;
+	public static final int DEFAULT_CREATURE_WIDTH = 64, DEFAULT_CREATURE_HEIGHT = 64;
 	
 	protected int health;
 	protected float movementSpeed;
@@ -20,8 +20,10 @@ public abstract class Creature extends Entity{
 	}
 
 	public void move(){
-		moveX();
-		moveY();
+		if(!checkEntityCollisions(0f, xMove))
+			moveX();
+		if(!checkEntityCollisions(0f, yMove))
+			moveY();
 	}
 	
 	public void moveX() {

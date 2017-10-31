@@ -1,7 +1,8 @@
-package com.greenStudios.entitys;
+package com.greenStudios.entities;
 
 import java.awt.Graphics;
 
+import com.greenStudios.entities.statics.House;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 import com.greenStudios.utils.Utils;
@@ -14,26 +15,41 @@ public class World {
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
+	//Entities
+	private EntityManager entityManager;
+	
 	public World(Handler handler, String path){
 		this.handler = handler;
+		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
+		
+		entityManager.addEntity(new House(handler, 2*64, 4*64));
+		
 		loadWorld(path);
+		
+		entityManager.getPlayer().setX(spawnX); //Loads spawnX from world1
+		entityManager.getPlayer().setY(spawnY); //Loads spawnY from world1
 	}
 	
 	public void tick() {
-		
+		entityManager.tick();
 	}
 	
 	public void render(Graphics g) {
+		//Tile Calculation
 		int xStart = (int) Math.max(0, handler.getGameCamera().getxOffset() / Tile.TILEWIDTH);
 		int xEnd = (int) Math.min(width, (handler.getGameCamera().getxOffset() + handler.getWidth()) / Tile.TILEWIDTH + 1);
 		int yStart = (int) Math.max(0, handler.getGameCamera().getyOffset() / Tile.TILEHEIGHT);
 		int yEnd = (int) Math.min(height, (handler.getGameCamera().getyOffset() + handler.getHeight()) / Tile.TILEHEIGHT + 1);
 		
+		//Tiles
 		for(int y = yStart; y < yEnd; y++) {
 			for(int x = xStart; x < xEnd; x++) {
 				getTile(x, y).render(g, (int) (x*Tile.TILEWIDTH - handler.getGameCamera().getxOffset()), (int) (y*Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
+		
+		//Entities
+		entityManager.render(g);
 		
 	}
 	
@@ -71,5 +87,9 @@ public class World {
 	
 	public int getHeight() {
 		return height;
+	}
+
+	public EntityManager getEntityManager() {
+		return entityManager;
 	}
 }

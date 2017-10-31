@@ -1,5 +1,6 @@
-package com.greenStudios.entitys;
+package com.greenStudios.entities;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -13,10 +14,12 @@ public class Player extends Creature {
 	private Animation animUp;
 	private Animation animLeft;
 	private Animation animRight;
+	
+	private boolean drawCollision = true;
 
 	
 	public Player(Handler handler, float x, float y) {
-		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEAFUALT_CREATURE_HEIGHT);
+		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		movementSpeed = Creature.DEFAULT_SPEED;
 		
 		bounds.x = 16;
@@ -68,6 +71,11 @@ public class Player extends Creature {
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), null);
+	
+		if(drawCollision) {
+			g.setColor(Color.red);
+			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+		}
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {
