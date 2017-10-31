@@ -29,6 +29,7 @@ public class Assets {
 		player_down = new BufferedImage[4];
 		player_up = new BufferedImage[4];
 		player_left = new BufferedImage[4];
+		
 		player_right = new BufferedImage[4];
 		player_idle = new BufferedImage[4];
 		
