@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import com.greenStudios.listeners.FNTBKeyListener;
+import com.greenStudios.listeners.KeyManager;
 
 public class Display {
 

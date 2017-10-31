@@ -2,7 +2,8 @@ package com.greenStudios.main;
 
 import com.greenStudios.entities.World;
 import com.greenStudios.java2d.GameCamera;
-import com.greenStudios.listeners.FNTBKeyListener;
+import com.greenStudios.listeners.KeyManager;
+import com.greenStudios.listeners.MouseManager;
 
 public class Handler {
 	
@@ -17,8 +18,12 @@ public class Handler {
 		return game.getGameCamera();
 	}
 	
-	public FNTBKeyListener getKeyListener() {
-		return game.getKeyListener();
+	public KeyManager getKeyListener() {
+		return game.getKeyManager();
+	}
+	
+	public MouseManager getMouseManager(){
+		return game.getMouseManager();
 	}
 	
 	public int getWidth() {

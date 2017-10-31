@@ -7,24 +7,28 @@ import java.awt.image.BufferStrategy;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.java2d.Display;
 import com.greenStudios.java2d.GameCamera;
-import com.greenStudios.listeners.FNTBKeyListener;
+import com.greenStudios.listeners.KeyManager;
+import com.greenStudios.listeners.MouseManager;
 import com.greenStudios.main.states.GameState;
 import com.greenStudios.main.states.MenuState;
 import com.greenStudios.main.states.State;
 
 public class Game implements Runnable {
-
+	//Frame
 	private final Display display;
-	private final FNTBKeyListener keyListener;
-	
+	//Listeners
+	private final KeyManager keyManager;
+	private final MouseManager mouseManager;
+	//-------------------------------------
 	private boolean running;
 	private Thread mainThread;
 	private Canvas canvas;
 	private BufferStrategy bs;
 	private Graphics g;
-	
-	private State gameState;
-	private State menuState;
+	//-------------------------------------
+	//States
+	public State gameState;
+	public State menuState;
 	
 	//Camera
 	private GameCamera gameCamera;
@@ -35,8 +39,13 @@ public class Game implements Runnable {
 	public Game() {
 		// ---initialization------		
 		display = new Display();
-		keyListener = new FNTBKeyListener();
-		display.getFrame().addKeyListener(keyListener);
+		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
+		display.getFrame().addKeyListener(keyManager);
+		display.getFrame().addMouseListener(mouseManager);
+		display.getFrame().addMouseMotionListener(mouseManager);
+		display.getCanvas().addMouseListener(mouseManager);
+		display.getCanvas().addMouseMotionListener(mouseManager);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -46,14 +55,14 @@ public class Game implements Runnable {
 		//---States-----------------
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
-		State.setState(gameState);
+		State.setState(menuState);
 		// -------------------------
 		start();
 	}
 
 	// ------------------------------------------------------------------------------------
 	private void tick() {
-		keyListener.tick();
+		keyManager.tick();
 		
 		if(State.getState() != null){
 			State.getState().tick();
@@ -146,8 +155,10 @@ public class Game implements Runnable {
 		}
 	}
 	
-	public FNTBKeyListener getKeyListener(){
-		return keyListener;
-		
+	public KeyManager getKeyManager(){
+		return keyManager;
+	}
+	public MouseManager getMouseManager(){
+		return mouseManager;
 	}
 }
