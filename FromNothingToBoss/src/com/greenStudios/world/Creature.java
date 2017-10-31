@@ -6,7 +6,7 @@ import com.greenStudios.main.tiles.Tile;
 public abstract class Creature extends Entity{
 
 	public static final int DEFAULT_HEALTH = 100;
-	public static final float DEFAULT_SPEED = 5;
+	public static final float DEFAULT_SPEED = 2;
 	public static final int DEFAULT_CREATURE_WIDTH = 64, DEAFUALT_CREATURE_HEIGHT = 64;
 	
 	protected int health;

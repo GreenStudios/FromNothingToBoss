@@ -20,6 +20,10 @@ public class FNTBKeyListener implements KeyListener {
 		down = keys[KeyEvent.VK_DOWN];
 		left = keys[KeyEvent.VK_LEFT];
 		right = keys[KeyEvent.VK_RIGHT];
+		
+		if(keys[KeyEvent.VK_ESCAPE]){
+			System.exit(1000);
+		}
 	}
 
 	@Override
