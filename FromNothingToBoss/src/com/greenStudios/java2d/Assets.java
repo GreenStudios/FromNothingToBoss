@@ -22,8 +22,8 @@ public class Assets {
 		//Menu Buttons
 		btn_start = new BufferedImage[2];
 		
-		btn_start[0] = sheetMenu.crop(0, 0, 320, 240);
-		btn_start[1] = sheetMenu.crop(320, 240, 320, 240);
+		btn_start[0] = sheetMenu.crop(0, 0, 640, 240);
+		btn_start[1] = sheetMenu.crop(0, 240, 640, 240);
 		
 		//Player Animations
 		player_down = new BufferedImage[4];
