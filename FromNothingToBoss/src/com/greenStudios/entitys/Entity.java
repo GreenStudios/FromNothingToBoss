@@ -1,4 +1,4 @@
-package com.greenStudios.world;
+package com.greenStudios.entitys;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;

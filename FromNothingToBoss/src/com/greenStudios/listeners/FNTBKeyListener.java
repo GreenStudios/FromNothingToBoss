@@ -22,7 +22,7 @@ public class FNTBKeyListener implements KeyListener {
 		right = keys[KeyEvent.VK_RIGHT];
 		
 		if(keys[KeyEvent.VK_ESCAPE]){
-			System.exit(1000);
+			System.exit(0);
 		}
 	}
 

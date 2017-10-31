@@ -1,4 +1,4 @@
-package com.greenStudios.world;
+package com.greenStudios.entitys;
 
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;

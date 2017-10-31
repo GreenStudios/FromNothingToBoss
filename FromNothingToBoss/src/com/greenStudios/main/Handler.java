@@ -1,8 +1,8 @@
 package com.greenStudios.main;
 
+import com.greenStudios.entitys.World;
 import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.FNTBKeyListener;
-import com.greenStudios.world.World;
 
 public class Handler {
 	

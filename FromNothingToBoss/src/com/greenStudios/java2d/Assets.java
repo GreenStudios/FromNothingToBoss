@@ -8,6 +8,7 @@ public class Assets {
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right;
 	public static BufferedImage player_idle;
+	public static BufferedImage house;
 	
 	public static void init(){
 		
@@ -56,6 +57,7 @@ public class Assets {
 		//Water
 		water1 = sheetWater.crop(0, 0, width, height);
 		
-		
+		//House
+		house = ImageLoader.loadImage("/textures/house/house.png");
 	}
 }

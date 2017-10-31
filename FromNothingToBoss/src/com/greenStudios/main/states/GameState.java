@@ -2,9 +2,9 @@ package com.greenStudios.main.states;
 
 import java.awt.Graphics;
 
+import com.greenStudios.entitys.Player;
+import com.greenStudios.entitys.World;
 import com.greenStudios.main.Handler;
-import com.greenStudios.world.Player;
-import com.greenStudios.world.World;
 
 public class GameState extends State {
 

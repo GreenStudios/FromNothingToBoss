@@ -1,8 +1,8 @@
 package com.greenStudios.java2d;
 
+import com.greenStudios.entitys.Entity;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
-import com.greenStudios.world.Entity;
 
 public class GameCamera {
 	
