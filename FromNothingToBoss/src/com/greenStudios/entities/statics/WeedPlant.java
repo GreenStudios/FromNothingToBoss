@@ -9,15 +9,15 @@ import com.greenStudios.main.tiles.Tile;
 
 public class WeedPlant extends StaticEntity{
 	
-	private boolean drawCollision = true;
+	private boolean drawCollision = false;
 
 	public WeedPlant(Handler handler, float x, float y) {
 		super(handler, x, y, Tile.TILEWIDTH, 96);
 		
-		bounds.x = width / 3;
-		bounds.y = 96 / 4;
-		bounds.width = 16;
-		bounds.height = 64;
+		bounds.x = width / 2;
+		bounds.y = 70;
+		bounds.width = 3;
+		bounds.height = 3;
 	}
 
 	@Override
