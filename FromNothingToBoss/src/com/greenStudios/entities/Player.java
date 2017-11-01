@@ -63,16 +63,16 @@ public class Player extends Creature {
 		xMove = 0;
 		yMove = 0;
 		
-		if(handler.getKeyListener().up){
+		if(handler.getKeyListener().moveUp){
 			yMove = -movementSpeed;
 		}
-		if(handler.getKeyListener().down){
+		if(handler.getKeyListener().moveDown){
 			yMove = movementSpeed;
 		}
-		if(handler.getKeyListener().left){
+		if(handler.getKeyListener().moveLeft){
 			xMove = -movementSpeed;
 		}
-		if(handler.getKeyListener().right){
+		if(handler.getKeyListener().moveRight){
 			xMove = movementSpeed;
 		}
 		if(handler.getKeyListener().action){

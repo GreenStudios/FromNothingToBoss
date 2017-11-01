@@ -8,7 +8,7 @@ import com.greenStudios.main.Game;
 public class KeyManager implements KeyListener {
 	
 	private boolean[] keys;
-	public boolean up, down, left, right;
+	public boolean moveUp, moveDown, moveLeft, moveRight;
 	public boolean action;
 
 	public KeyManager() {
@@ -17,10 +17,10 @@ public class KeyManager implements KeyListener {
 	}
 	
 	public void tick(){
-		up = keys[KeyEvent.VK_UP];
-		down = keys[KeyEvent.VK_DOWN];
-		left = keys[KeyEvent.VK_LEFT];
-		right = keys[KeyEvent.VK_RIGHT];
+		moveUp = keys[KeyEvent.VK_UP];
+		moveDown = keys[KeyEvent.VK_DOWN];
+		moveLeft = keys[KeyEvent.VK_LEFT];
+		moveRight = keys[KeyEvent.VK_RIGHT];
 		
 		action = keys[KeyEvent.VK_SPACE];
 		
