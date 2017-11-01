@@ -36,10 +36,10 @@ public class Player extends Creature {
 		bounds.height = 32;
 		
 		//Animations
-		animDown = new Animation(80, Assets.player_down);
-		animUp = new Animation(80, Assets.player_up);
-		animLeft = new Animation(80, Assets.player_left);
-		animRight = new Animation(80, Assets.player_right);
+		animDown = new Animation(120, Assets.player_down);
+		animUp = new Animation(120, Assets.player_up);
+		animLeft = new Animation(120, Assets.player_left);
+		animRight = new Animation(120, Assets.player_right);
 	}
 
 	@Override
@@ -118,36 +118,47 @@ public class Player extends Creature {
 		
 		if(handler.getKeyListener().moveUp){
 			if(handler.getKeyListener().sprint){
+				animUp.setSpeed(80);
 				yMove = -movementSpeed * 2;
 			}
-			else
+			else {
+			animUp.setSpeed(120);
 			yMove = -movementSpeed;
-		}else
+			}
+		}
+		
 		if(handler.getKeyListener().moveDown){
 			if(handler.getKeyListener().sprint){
+				animDown.setSpeed(80);
 				yMove = movementSpeed * 2;
+			}else {
+				animDown.setSpeed(120);	
+				yMove = movementSpeed;
 			}
-			else
-			yMove = movementSpeed;
-		}else
-		if(handler.getKeyListener().moveLeft){
-			if(handler.getKeyListener().sprint){
-				xMove = -movementSpeed * 2;
-			}
-			else
-			xMove = -movementSpeed;
-		}else
-		if(handler.getKeyListener().moveRight){
-			if(handler.getKeyListener().sprint){
-				xMove = movementSpeed * 2;
-			}
-			else
-			xMove = movementSpeed;
 		}
-		if(handler.getKeyListener().action){
-			//entityManager.addEntity(new WeedPlant(handler, (int) getX(), (int) getY()));
-			//System.out.println(handler);
-		}
+		
+			if(handler.getKeyListener().moveLeft){
+				if(handler.getKeyListener().sprint){
+					animLeft.setSpeed(80);
+					xMove = -movementSpeed * 2;
+				}
+				else {
+					animLeft.setSpeed(120);
+					xMove = -movementSpeed;
+				}
+			}
+				
+			if(handler.getKeyListener().moveRight){
+				if(handler.getKeyListener().sprint){
+					animRight.setSpeed(80);
+					xMove = movementSpeed * 2;
+				}
+				else {
+					animRight.setSpeed(120);
+					xMove = movementSpeed;
+				}
+			}
+		
 	}
 	
 
