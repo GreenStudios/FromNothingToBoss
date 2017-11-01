@@ -28,4 +28,9 @@ public class GameState extends State {
 		world.render(g);
 	}
 
+	@Override
+	public void setButtons() {
+		
+	}
+
 }

@@ -1,6 +1,7 @@
 package com.greenStudios.main;
 
 import com.greenStudios.entities.World;
+import com.greenStudios.java2d.Display;
 import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.KeyManager;
 import com.greenStudios.listeners.MouseManager;
@@ -48,6 +49,10 @@ public class Handler {
 
 	public void setWorld(World world) {
 		this.world = world;
+	}
+	
+	public Display getDisplay(){
+		return game.getDisplay();
 	}
 
 }

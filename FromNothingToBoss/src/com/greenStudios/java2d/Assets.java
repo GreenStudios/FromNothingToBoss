@@ -14,7 +14,13 @@ public class Assets {
 	public static BufferedImage[] btn_loadgame;
 	public static BufferedImage[] btn_settings;
 	public static BufferedImage[] btn_quitgame;
+
 	public static BufferedImage weedItem;
+
+	public static BufferedImage[] btn_fullscreen;
+	public static BufferedImage[] btn_back;
+	
+
 	
 	public static void init(){
 		
@@ -22,7 +28,7 @@ public class Assets {
 		SpriteSheet sheetGrass = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetGrass.png"));
 		SpriteSheet sheetWater = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetWater.png"));
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
-		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/buttonsheet.png"));
+		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
 		
 		//Menu Buttons
 		btn_continue = new BufferedImage[2];
@@ -30,6 +36,8 @@ public class Assets {
 	    btn_loadgame = new BufferedImage[2];
 		btn_settings = new BufferedImage[2];
 		btn_quitgame = new BufferedImage[2];
+		btn_fullscreen = new BufferedImage[2];
+		btn_back = new BufferedImage[2];
 		
 		btn_continue[0] = sheetMenu.crop(0, 0, 639, 159);
 		btn_continue[1] = sheetMenu.crop(639, 0, 639, 159);
@@ -41,6 +49,10 @@ public class Assets {
 		btn_settings[1] = sheetMenu.crop(639, 479, 639, 159);
 		btn_quitgame[0] = sheetMenu.crop(0, 639, 639, 159);
 		btn_quitgame[1] = sheetMenu.crop(639, 639, 639, 159);
+		btn_fullscreen[0] = sheetMenu.crop(0, 799, 639, 159);
+		btn_fullscreen[1] = sheetMenu.crop(639, 799, 639, 159);
+		btn_back[0] = sheetMenu.crop(0, 959, 639, 159);
+		btn_back[1] = sheetMenu.crop(639, 959, 639, 159);
 		
 		//Player Animations
 		player_down = new BufferedImage[4];
