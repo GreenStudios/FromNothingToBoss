@@ -9,6 +9,7 @@ public class KeyManager implements KeyListener {
 	
 	private boolean[] keys;
 	public boolean moveUp, moveDown, moveLeft, moveRight;
+	public boolean attack;
 	public boolean action;
 
 	public KeyManager() {
@@ -21,6 +22,8 @@ public class KeyManager implements KeyListener {
 		moveDown = keys[KeyEvent.VK_DOWN];
 		moveLeft = keys[KeyEvent.VK_LEFT];
 		moveRight = keys[KeyEvent.VK_RIGHT];
+		
+		attack = keys[KeyEvent.VK_D];
 		
 		action = keys[KeyEvent.VK_SPACE];
 		
