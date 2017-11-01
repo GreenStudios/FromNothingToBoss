@@ -7,13 +7,14 @@ public class Assets {
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
-	public static BufferedImage house;
+	public static BufferedImage house, shed;
 	public static BufferedImage weedPlant;
 	public static BufferedImage[] btn_continue;
 	public static BufferedImage[] btn_newgame;
 	public static BufferedImage[] btn_loadgame;
 	public static BufferedImage[] btn_settings;
 	public static BufferedImage[] btn_quitgame;
+	public static BufferedImage weedItem;
 	
 	public static void init(){
 		
@@ -86,10 +87,14 @@ public class Assets {
 		//Water
 		water1 = sheetWater.crop(0, 0, width, height);
 		
-		//House
-		house = ImageLoader.loadImage("/textures/static_entities/house/house.png");
+		//Buildings
+		house = ImageLoader.loadImage("/textures/static_entities/buildings/house.png");
+		shed = ImageLoader.loadImage("/textures/static_entities/buildings/shed.png");
 		
 		//Plants
 		weedPlant = ImageLoader.loadImage("/textures/static_entities/plants/weedPlant.png");
+		
+		//Items
+		weedItem = ImageLoader.loadImage("/textures/items/weedItem.png");
 	}
 }

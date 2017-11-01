@@ -127,7 +127,7 @@ public class Player extends Creature {
 			}
 		}
 		
-		if(handler.getKeyListener().moveDown){
+		else if(handler.getKeyListener().moveDown){
 			if(handler.getKeyListener().sprint){
 				animDown.setSpeed(80);
 				yMove = movementSpeed * 2;
@@ -137,7 +137,7 @@ public class Player extends Creature {
 			}
 		}
 		
-			if(handler.getKeyListener().moveLeft){
+		else if(handler.getKeyListener().moveLeft){
 				if(handler.getKeyListener().sprint){
 					animLeft.setSpeed(80);
 					xMove = -movementSpeed * 2;
@@ -148,7 +148,7 @@ public class Player extends Creature {
 				}
 			}
 				
-			if(handler.getKeyListener().moveRight){
+		else if(handler.getKeyListener().moveRight){
 				if(handler.getKeyListener().sprint){
 					animRight.setSpeed(80);
 					xMove = movementSpeed * 2;

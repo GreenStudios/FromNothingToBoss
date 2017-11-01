@@ -3,7 +3,9 @@ package com.greenStudios.entities;
 import java.awt.Graphics;
 
 import com.greenStudios.entities.statics.House;
+import com.greenStudios.entities.statics.Shed;
 import com.greenStudios.entities.statics.WeedPlant;
+import com.greenStudios.items.ItemManager;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 import com.greenStudios.utils.Utils;
@@ -21,12 +23,17 @@ public class World {
 	//Entities
 	private EntityManager entityManager;
 	
+	//Item
+	private ItemManager itemManager;
+	
 	public World(Handler handler, String path){
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
+		itemManager = new ItemManager(handler);
 		
 		entityManager.addEntity(new House(handler, 2*64, 4*64));
 		entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
+		entityManager.addEntity(new Shed(handler, 2*64, 8*64));
 		
 		loadWorld(path);
 		
@@ -35,6 +42,7 @@ public class World {
 	}
 	
 	public void tick() {
+		itemManager.tick();
 		entityManager.tick();
 		getInput();
 		
@@ -69,11 +77,30 @@ public class World {
 			}
 		}
 		
+		//Items
+		itemManager.render(g);
+		
 		//Entities
 		entityManager.render(g);
 		
 	}
 	
+	public Handler getHandler() {
+		return handler;
+	}
+
+	public void setHandler(Handler handler) {
+		this.handler = handler;
+	}
+
+	public ItemManager getItemManager() {
+		return itemManager;
+	}
+
+	public void setItemManager(ItemManager itemManager) {
+		this.itemManager = itemManager;
+	}
+
 	public Tile getTile(int x, int y) {
 		if(x < 0 || y < 0 || x >= width || y >= height) 
 			return Tile.grass1;
