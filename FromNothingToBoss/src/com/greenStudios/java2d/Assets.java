@@ -7,7 +7,7 @@ public class Assets {
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
-	public static BufferedImage house, shed;
+	public static BufferedImage house, shed, house_jonah1;
 	public static BufferedImage weedPlant;
 	public static BufferedImage[] btn_continue;
 	public static BufferedImage[] btn_newgame;
@@ -102,6 +102,7 @@ public class Assets {
 		//Buildings
 		house = ImageLoader.loadImage("/textures/static_entities/buildings/house.png");
 		shed = ImageLoader.loadImage("/textures/static_entities/buildings/shed.png");
+		house_jonah1 = ImageLoader.loadImage("/textures/static_entities/buildings/house_jonah1.png");
 		
 		//Plants
 		weedPlant = ImageLoader.loadImage("/textures/static_entities/plants/weedPlant.png");

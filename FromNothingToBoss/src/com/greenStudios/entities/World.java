@@ -3,6 +3,7 @@ package com.greenStudios.entities;
 import java.awt.Graphics;
 
 import com.greenStudios.entities.statics.House;
+import com.greenStudios.entities.statics.House_Jonah1;
 import com.greenStudios.entities.statics.Shed;
 import com.greenStudios.entities.statics.WeedPlant;
 import com.greenStudios.items.ItemManager;
@@ -34,6 +35,7 @@ public class World {
 		entityManager.addEntity(new House(handler, 2*64, 4*64));
 		entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
 		entityManager.addEntity(new Shed(handler, 2*64, 8*64));
+		entityManager.addEntity(new House_Jonah1(handler, 4*64, 10*64));
 		
 		loadWorld(path);
 		

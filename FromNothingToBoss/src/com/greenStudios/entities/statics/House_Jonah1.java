@@ -7,17 +7,17 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class Shed extends StaticEntity{
+public class House_Jonah1 extends StaticEntity{
 
 	private boolean drawCollision = false;
 
-	public Shed(Handler handler, float x, float y) {
-		super(handler, x, y, 2*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT);
+	public House_Jonah1(Handler handler, float x, float y) {
+		super(handler, x, y, 150, 150);
 		
-		bounds.x = 28;
-		bounds.y = 80;
-		bounds.width = 75;
-		bounds.height = 36;
+		bounds.x = 12;
+		bounds.y = 96;
+		bounds.width = 124;
+		bounds.height = 45;
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class Shed extends StaticEntity{
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(Assets.shed,(int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+		g.drawImage(Assets.house_jonah1,(int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		
 		if(drawCollision) {
 			g.setColor(Color.red);
@@ -41,3 +41,4 @@ public class Shed extends StaticEntity{
 		}
 	}
 }
+
