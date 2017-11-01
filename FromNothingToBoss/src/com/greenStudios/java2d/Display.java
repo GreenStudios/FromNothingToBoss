@@ -2,6 +2,8 @@ package com.greenStudios.java2d;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
 
@@ -14,11 +16,13 @@ public class Display {
 
 	private String title;
 	private int width, height;
+	
+	private GraphicsDevice device;
 
 	public Display() {
 		title = "From Nothing To Boss";
 		width = 1920;
-		height = 1024;
+		height = 1080;
 		
 		createDisplay();
 	}
@@ -40,6 +44,12 @@ public class Display {
 		canvas.setMinimumSize(new Dimension(width, height));
 		canvas.setFocusable(false);
 		frame.setFocusable(true);
+		
+		 GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		 device =ge.getDefaultScreenDevice();
+		 if(device.isFullScreenSupported()){
+	            device.setFullScreenWindow(frame);
+	        }
 
 		frame.add(canvas);
 		frame.pack();
