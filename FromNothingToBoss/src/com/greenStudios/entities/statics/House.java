@@ -12,11 +12,11 @@ public class House extends StaticEntity{
 	private boolean drawCollision = false;
 
 	public House(Handler handler, float x, float y) {
-		super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
+		super(handler, x, y, 5*Tile.TILEWIDTH/2, 5*Tile.TILEHEIGHT/2);
 		
-		bounds.x = 8;
-		bounds.y = 32;
-		bounds.width = 48;
+		bounds.x = 18;
+		bounds.y = 115;
+		bounds.width = 128;
 		bounds.height = 32;
 	}
 

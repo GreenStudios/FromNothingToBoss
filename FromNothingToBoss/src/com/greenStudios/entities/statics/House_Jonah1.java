@@ -12,12 +12,12 @@ public class House_Jonah1 extends StaticEntity{
 	private boolean drawCollision = false;
 
 	public House_Jonah1(Handler handler, float x, float y) {
-		super(handler, x, y, 150, 150);
+		super(handler, x, y, 3*Tile.TILEWIDTH, 3*Tile.TILEWIDTH);
 		
-		bounds.x = 12;
-		bounds.y = 96;
-		bounds.width = 124;
-		bounds.height = 45;
+		bounds.x = 6;
+		bounds.y = 2*64;
+		bounds.width = 180;
+		bounds.height = 48;
 	}
 
 	@Override

@@ -32,10 +32,10 @@ public class World {
 		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
 		itemManager = new ItemManager(handler);
 		
-		entityManager.addEntity(new House(handler, 2*64, 4*64));
-		entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
-		entityManager.addEntity(new Shed(handler, 2*64, 8*64));
-		entityManager.addEntity(new House_Jonah1(handler, 4*64, 10*64));
+		entityManager.addEntity(new House(handler, 8*64, 155));
+		//entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
+		entityManager.addEntity(new Shed(handler, 14*64, 3*64));
+		entityManager.addEntity(new House_Jonah1(handler, 2*64, 2*64));
 		
 		loadWorld(path);
 		

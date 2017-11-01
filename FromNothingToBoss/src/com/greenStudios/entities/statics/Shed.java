@@ -9,10 +9,10 @@ import com.greenStudios.main.tiles.Tile;
 
 public class Shed extends StaticEntity{
 
-	private boolean drawCollision = false;
+	private boolean drawCollision = true;
 
 	public Shed(Handler handler, float x, float y) {
-		super(handler, x, y, 2*Tile.TILEWIDTH, 2*Tile.TILEHEIGHT);
+		super(handler, x, y, 4*Tile.TILEWIDTH, 4*Tile.TILEHEIGHT);
 		
 		bounds.x = 28;
 		bounds.y = 80;
