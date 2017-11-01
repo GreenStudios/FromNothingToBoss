@@ -16,6 +16,7 @@ public class Display {
 
 	private String title;
 	private int width, height;
+	private boolean fullscreen = false;
 	
 	private GraphicsDevice device;
 
@@ -47,9 +48,7 @@ public class Display {
 		
 		 GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		 device =ge.getDefaultScreenDevice();
-		 if(device.isFullScreenSupported()){
-	            device.setFullScreenWindow(frame);
-	        }
+		 setFullscreen();
 
 		frame.add(canvas);
 		frame.pack();
@@ -66,7 +65,22 @@ public class Display {
 	}
 	public JFrame getFrame(){
 		return frame;
-		
+	}
+	public GraphicsDevice getDevice(){
+		return device;
+	}
+	public void setFullscreen(){
+		if(fullscreen){
+			if(device.isFullScreenSupported()){
+	            device.setFullScreenWindow(null);
+	            fullscreen = false;
+	        }
+		}else{
+			if(device.isFullScreenSupported()){
+	            device.setFullScreenWindow(frame);
+	            fullscreen = true;
+	        }
+		}
 	}
 
 }
