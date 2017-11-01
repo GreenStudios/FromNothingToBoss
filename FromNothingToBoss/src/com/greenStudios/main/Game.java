@@ -11,7 +11,9 @@ import com.greenStudios.listeners.KeyManager;
 import com.greenStudios.listeners.MouseManager;
 import com.greenStudios.main.states.GameState;
 import com.greenStudios.main.states.MenuState;
+import com.greenStudios.main.states.SettingsState;
 import com.greenStudios.main.states.State;
+import com.greenStudios.main.ui.UIManager;
 
 public class Game implements Runnable {
 	//Frame
@@ -25,11 +27,12 @@ public class Game implements Runnable {
 	private Canvas canvas;
 	private BufferStrategy bs;
 	private Graphics g;
+	private UIManager uiManager;
 	//-------------------------------------
 	//States
 	public State gameState;
 	public State menuState;
-	
+	public State settingsState;
 	//Camera
 	private GameCamera gameCamera;
 	
@@ -46,6 +49,7 @@ public class Game implements Runnable {
 		display.getFrame().addMouseMotionListener(mouseManager);
 		display.getCanvas().addMouseListener(mouseManager);
 		display.getCanvas().addMouseMotionListener(mouseManager);
+		uiManager = new UIManager(handler);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -54,7 +58,8 @@ public class Game implements Runnable {
 		this.canvas = display.getCanvas();
 		//---States-----------------
 		gameState = new GameState(handler);
-		menuState = new MenuState(handler);
+		menuState = new MenuState(handler, uiManager);
+		settingsState = new SettingsState(handler, uiManager);
 		State.setState(menuState);
 		// -------------------------
 		start();
@@ -160,5 +165,8 @@ public class Game implements Runnable {
 	}
 	public MouseManager getMouseManager(){
 		return mouseManager;
+	}
+	public Display getDisplay(){
+		return display;
 	}
 }
