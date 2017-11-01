@@ -2,9 +2,9 @@ package com.greenStudios.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-import com.greenStudios.entities.statics.WeedPlant;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -15,7 +15,10 @@ public class Player extends Creature {
 	private Animation animUp;
 	private Animation animLeft;
 	private Animation animRight;
+	
+	//0 = Down, 1 = Up, 2 = Left, 3 = Right
 	private int lastAnim;
+	
 	
 	private EntityManager entityManager;
 	
@@ -53,6 +56,56 @@ public class Player extends Creature {
 		
 		//Camera
 		handler.getGameCamera().centerOnEntity(this);
+		
+		//Attack
+		checkAttacks();
+	}
+	
+	private void checkAttacks() {
+		Rectangle cb = getCollisionBounds(0, 0);
+		Rectangle ar = new Rectangle();
+		int arSize = 20;
+		ar.width = arSize;
+		ar.height = arSize;
+		
+		//Up
+		if(handler.getKeyListener().attack && lastAnim == 1) {
+			ar.x = cb.x + cb.width / 2 - arSize / 2;
+			ar.y = cb.y - arSize;
+		}
+		
+		//Down
+		else if(handler.getKeyListener().attack && lastAnim == 0) {
+			ar.x = cb.x + cb.width / 2 - arSize / 2;
+			ar.y = cb.y + cb.height;
+		}
+		
+		//Left
+		else if(handler.getKeyListener().attack && lastAnim == 2) {
+			ar.x = cb.x - arSize;
+			ar.y = cb.y + cb.height / 2 - arSize / 2;
+		}
+		
+		//Right
+		else if(handler.getKeyListener().attack && lastAnim == 3) {
+			ar.x = cb.x + cb.width;
+			ar.y = cb.y + cb.height / 2 - arSize / 2;
+		}
+		
+		//Not Attacking
+		else {
+			return;
+		}
+		
+		for(Entity e : handler.getWorld().getEntityManager().getEntities()) {
+			if(e.equals(this)) {
+				continue;
+			}
+			if(e.getCollisionBounds(0, 0).intersects(ar)) {
+				e.hurt(40);
+				return;
+			}
+		}
 	}
 	
 	public void die() {
