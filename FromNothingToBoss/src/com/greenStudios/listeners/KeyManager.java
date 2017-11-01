@@ -11,6 +11,7 @@ public class KeyManager implements KeyListener {
 	public boolean moveUp, moveDown, moveLeft, moveRight;
 	public boolean attack;
 	public boolean action;
+	public boolean sprint;
 
 	public KeyManager() {
 		super();
@@ -26,6 +27,8 @@ public class KeyManager implements KeyListener {
 		attack = keys[KeyEvent.VK_D];
 		
 		action = keys[KeyEvent.VK_SPACE];
+		
+		sprint = keys[KeyEvent.VK_SHIFT];
 		
 		if(keys[KeyEvent.VK_ESCAPE]){
 			System.exit(0);

@@ -117,15 +117,31 @@ public class Player extends Creature {
 		yMove = 0;
 		
 		if(handler.getKeyListener().moveUp){
+			if(handler.getKeyListener().sprint){
+				yMove = -movementSpeed * 2;
+			}
+			else
 			yMove = -movementSpeed;
 		}else
 		if(handler.getKeyListener().moveDown){
+			if(handler.getKeyListener().sprint){
+				yMove = movementSpeed * 2;
+			}
+			else
 			yMove = movementSpeed;
 		}else
 		if(handler.getKeyListener().moveLeft){
+			if(handler.getKeyListener().sprint){
+				xMove = -movementSpeed * 2;
+			}
+			else
 			xMove = -movementSpeed;
 		}else
 		if(handler.getKeyListener().moveRight){
+			if(handler.getKeyListener().sprint){
+				xMove = movementSpeed * 2;
+			}
+			else
 			xMove = movementSpeed;
 		}
 		if(handler.getKeyListener().action){
