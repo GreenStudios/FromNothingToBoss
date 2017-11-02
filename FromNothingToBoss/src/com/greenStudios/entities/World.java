@@ -2,6 +2,7 @@ package com.greenStudios.entities;
 
 import java.awt.Graphics;
 
+import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.entities.statics.House_Jonah1;
 import com.greenStudios.entities.statics.Shed;
@@ -34,8 +35,9 @@ public class World {
 		
 		entityManager.addEntity(new House(handler, 8*64, 155));
 		//entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
-		entityManager.addEntity(new Shed(handler, 14*64, 3*64));
+		//entityManager.addEntity(new Shed(handler, 14*64, 3*64));
 		entityManager.addEntity(new House_Jonah1(handler, 2*64, 2*64));
+		entityManager.addEntity(new BrokenHouse(handler, 18*64, 32));
 		
 		loadWorld(path);
 		

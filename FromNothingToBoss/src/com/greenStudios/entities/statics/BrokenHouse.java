@@ -1,0 +1,44 @@
+package com.greenStudios.entities.statics;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import com.greenStudios.java2d.Assets;
+import com.greenStudios.main.Handler;
+import com.greenStudios.main.tiles.Tile;
+
+public class BrokenHouse extends StaticEntity{
+
+	private boolean drawCollision = false;
+
+	public BrokenHouse(Handler handler, float x, float y) {
+		super(handler, x, y, 5*Tile.TILEWIDTH, 5*Tile.TILEWIDTH);
+		
+		bounds.x = 32;
+		bounds.y = 150;
+		bounds.width = 256;
+		bounds.height = 100;
+	}
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void die() {
+		
+	}
+
+	@Override
+	public void render(Graphics g) {
+		g.drawImage(Assets.brokenhouse,(int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+		
+		if(drawCollision) {
+			g.setColor(Color.red);
+			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+		}
+	}
+}
+
