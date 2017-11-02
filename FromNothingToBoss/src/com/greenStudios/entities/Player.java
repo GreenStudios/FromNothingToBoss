@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
+import com.greenStudios.inventory.Inventory;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -19,11 +20,13 @@ public class Player extends Creature {
 	//0 = Down, 1 = Up, 2 = Left, 3 = Right
 	private int lastAnim;
 	
+	//Inventory
+	private Inventory inventory;
+	
 	
 	private EntityManager entityManager;
 	
 	private boolean drawCollision = false;
-
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -40,6 +43,8 @@ public class Player extends Creature {
 		animUp = new Animation(120, Assets.player_up);
 		animLeft = new Animation(120, Assets.player_left);
 		animRight = new Animation(120, Assets.player_right);
+		
+		inventory = new Inventory(handler);
 	}
 
 	@Override
@@ -59,6 +64,9 @@ public class Player extends Creature {
 		
 		//Attack
 		checkAttacks();
+		
+		//Inventory
+		inventory.tick();
 	}
 	
 	private void checkAttacks() {
@@ -170,6 +178,8 @@ public class Player extends Creature {
 			g.setColor(Color.red);
 			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		}
+		
+		inventory.render(g);
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {
@@ -187,7 +197,16 @@ public class Player extends Creature {
 			return animDown.getCurrentFrame();
 		}else {
 			return Assets.player_idle[lastAnim];
-		}	
+		}
+		
+	}
+
+	public Inventory getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
 	}
 }
 		
