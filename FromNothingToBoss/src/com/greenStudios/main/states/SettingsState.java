@@ -17,7 +17,6 @@ public class SettingsState extends State {
 	public SettingsState(Handler handler, UIManager uiManager) {
 		super(handler);
 		this.uiManager = uiManager;
-		//setButtons();
 	}
 
 	public void setButtons() {
