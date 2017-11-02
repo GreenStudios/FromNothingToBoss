@@ -12,12 +12,12 @@ public class BrokenHouse extends StaticEntity{
 	private boolean drawCollision = false;
 
 	public BrokenHouse(Handler handler, float x, float y) {
-		super(handler, x, y, 5*Tile.TILEWIDTH, 5*Tile.TILEWIDTH);
+		super(handler, x, y, 5*Tile.TILEWIDTH, 3*Tile.TILEHEIGHT);
 		
-		bounds.x = 32;
-		bounds.y = 150;
-		bounds.width = 256;
-		bounds.height = 100;
+		bounds.x = 16;
+		bounds.y = 32;
+		bounds.width = 288;
+		bounds.height = 133;
 	}
 
 	@Override

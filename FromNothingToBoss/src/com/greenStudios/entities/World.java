@@ -39,7 +39,7 @@ public class World {
 		//entityManager.addEntity(new Shed(handler, 14*64, 3*64));
 		entityManager.addEntity(new Field(handler, 11*64, 11*64));
 		entityManager.addEntity(new House_Jonah1(handler, 2*64, 2*64));
-		entityManager.addEntity(new BrokenHouse(handler, 18*64, 32));
+		entityManager.addEntity(new BrokenHouse(handler, 18*64, 2*64));
 		
 		loadWorld(path);
 		

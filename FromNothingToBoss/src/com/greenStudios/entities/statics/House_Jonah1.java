@@ -12,7 +12,7 @@ public class House_Jonah1 extends StaticEntity{
 	private boolean drawCollision = false;
 
 	public House_Jonah1(Handler handler, float x, float y) {
-		super(handler, x, y, 3*Tile.TILEWIDTH, 3*Tile.TILEWIDTH);
+		super(handler, x, y, 3*Tile.TILEWIDTH, 3*Tile.TILEHEIGHT);
 		
 		bounds.x = 6;
 		bounds.y = 2*64;
