@@ -40,7 +40,7 @@ public class WeedPlant extends StaticEntity {
 	@Override
 	public void render(Graphics g) {
 		if (mature) {
-			g.drawImage(Assets.weedPlantMature, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, width, null);
+			g.drawImage(Assets.weedPlantMature, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		} else {
 			g.drawImage(Assets.weedPlant, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		}
