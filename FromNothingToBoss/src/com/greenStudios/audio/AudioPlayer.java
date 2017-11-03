@@ -44,6 +44,27 @@ public class AudioPlayer {
 		clip.start();
 		}
 	
+	public void loop(float volume) {
+		if(clip == null) {
+			return;
+		}
+		stop();
+		gainControl.setValue(volume);
+		clip.setFramePosition(0);
+		clip.setLoopPoints(0, -1);
+		clip.loop(clip.LOOP_CONTINUOUSLY);
+	}
+	
+	public void loop() {
+		if(clip == null) {
+			return;
+		}
+		stop();
+		clip.setFramePosition(0);
+		clip.setLoopPoints(0, -1);
+		clip.loop(clip.LOOP_CONTINUOUSLY);
+	}
+	
 	public void stop() {
 		if(clip.isRunning()) {
 			clip.stop();

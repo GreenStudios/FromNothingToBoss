@@ -22,7 +22,7 @@ public class MenuState extends State {
 		setButtons();
 		
 		menuMusic = new AudioPlayer("/music/bgm_mainMenu.wav");
-		menuMusic.play(-10f);
+		menuMusic.loop(-10f);
 	}
 
 	public void setButtons() {
