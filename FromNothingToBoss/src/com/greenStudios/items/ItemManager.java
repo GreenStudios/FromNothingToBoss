@@ -7,7 +7,7 @@ import java.util.Iterator;
 import com.greenStudios.main.Handler;
 
 public class ItemManager {
-	
+
 	private Handler handler;
 	private ArrayList<Item> items;
 	
@@ -50,5 +50,12 @@ public class ItemManager {
 		this.handler = handler;
 	}
 	
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
 
 }

@@ -1,19 +1,32 @@
 package com.greenStudios.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import com.greenStudios.main.Handler;
 
 public class Save {
+	
+	private PrintWriter pWriter;
+	
+	public Save(Handler handler) {
+		try {
+			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("/save/save.txt")));
+			pWriter.println(handler.getWorld().getEntityManager().getEntities());
+			pWriter.println(handler.getWorld().getItemManager().getItems());
+			
 
-	public Save(Handler handler){
-		FileReader fr = new FileReader("save.txt");
-	    BufferedReader br = new BufferedReader(fr);
-	    
-	    String zeile1 = br.readLine();
-	    preis1=Integer.parseInt(zeile1);
-	   
-	    br.close();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} finally {
+			if (pWriter != null) {
+				pWriter.flush();
+				pWriter.close();
+			}
+		}
 	}
 }
