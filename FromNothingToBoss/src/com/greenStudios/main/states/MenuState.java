@@ -32,7 +32,7 @@ public class MenuState extends State {
 		uiManager.addObject(new UIImageButton(600, 250, 640, 160, Assets.btn_newgame, new ClickListener() {
 			@Override
 			public void onClick() {
-				handler.getMouseManager().setUIManager(null);
+				
 				State.setState(handler.getGame().gameState);
 				uiManager.getObjects().clear();
 				handler.getGame().gameState.setButtons();

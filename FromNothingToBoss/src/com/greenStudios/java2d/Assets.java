@@ -19,7 +19,8 @@ public class Assets {
 	public static BufferedImage[] btn_loadgame;
 	public static BufferedImage[] btn_settings;
 	public static BufferedImage[] btn_quitgame;
-
+	public static BufferedImage[] btn_savegame;
+	
 	public static BufferedImage inventoryScreen;
 	public static BufferedImage weedItem;
 
@@ -28,13 +29,14 @@ public class Assets {
 	
 	public static BufferedImage loadingscreen;
 	
+	
 	public static void init(){
 		
 		//Sheets
 		SpriteSheet sheetTiles = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetTiles.png"));
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
-		
+		SpriteSheet sheetSave = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetsavebuttons.png"));
 		//Font
 		font28 = FontLoader.loadFont("assets/textures/gui/8_bit_party.ttf", 28);
 		
@@ -46,6 +48,7 @@ public class Assets {
 		btn_quitgame = new BufferedImage[2];
 		btn_fullscreen = new BufferedImage[2];
 		btn_back = new BufferedImage[2];
+		btn_savegame = new BufferedImage[2];
 		
 		btn_continue[0] = sheetMenu.crop(0, 0, 639, 159);
 		btn_continue[1] = sheetMenu.crop(639, 0, 639, 159);
@@ -61,6 +64,8 @@ public class Assets {
 		btn_fullscreen[1] = sheetMenu.crop(639, 799, 639, 159);
 		btn_back[0] = sheetMenu.crop(0, 959, 639, 159);
 		btn_back[1] = sheetMenu.crop(639, 959, 639, 159);
+		btn_savegame[0] = sheetSave.crop(0, 0, 639, 159);
+		btn_savegame[1] = sheetSave.crop(639, 0, 639, 159);
 		
 		//Player Animations
 		player_down = new BufferedImage[4];

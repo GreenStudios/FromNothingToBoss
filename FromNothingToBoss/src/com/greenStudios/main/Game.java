@@ -58,7 +58,7 @@ public class Game implements Runnable {
 		
 		this.canvas = display.getCanvas();
 		//---States-----------------
-		gameState = new GameState(handler);
+		gameState = new GameState(handler, uiManager);
 		menuState = new MenuState(handler, uiManager);
 		settingsState = new SettingsState(handler, uiManager);
 		State.setState(menuState);
@@ -88,7 +88,7 @@ public class Game implements Runnable {
 		// --Clear Screen-----
 		g.clearRect(0, 0, display.getWidth(), display.getHeight());
 		// --Draw Picture-----
-		if(State.getState() != null && timer >= 120){
+		if(State.getState() != null && timer >= 60){
 			State.getState().render(g);
 		}else{
 			g.drawImage(Assets.loadingscreen, 0, 0, 1920, 1080, null);
@@ -172,5 +172,11 @@ public class Game implements Runnable {
 	}
 	public Display getDisplay(){
 		return display;
+	}
+	public State getGameState(){
+		return gameState;
+	}
+	public UIManager getUIManager(){
+		return uiManager;
 	}
 }
