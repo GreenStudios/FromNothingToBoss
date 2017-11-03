@@ -18,6 +18,7 @@ public class BrokenHouse extends StaticEntity{
 		bounds.y = 32;
 		bounds.width = 288;
 		bounds.height = 133;
+		hurtable = false;
 	}
 
 	@Override

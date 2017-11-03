@@ -18,6 +18,7 @@ public class House_Jonah1 extends StaticEntity{
 		bounds.y = 2*64;
 		bounds.width = 180;
 		bounds.height = 48;
+		hurtable = false;
 	}
 
 	@Override

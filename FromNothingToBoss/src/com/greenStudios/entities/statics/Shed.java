@@ -18,6 +18,7 @@ public class Shed extends StaticEntity{
 		bounds.y = 80;
 		bounds.width = 75;
 		bounds.height = 36;
+		hurtable = false;
 	}
 
 	@Override

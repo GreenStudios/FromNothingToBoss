@@ -34,9 +34,9 @@ public abstract class Entity {
 	public abstract void die();
 	
 	public void hurt(int amt) {
-		if(hurtable) {
+		//if(hurtable) {
 			health -= amt;
-		}
+		//}
 		
 		if(health <= 0) {
 			active = false;

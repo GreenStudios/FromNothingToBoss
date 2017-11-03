@@ -10,7 +10,7 @@ public class Field extends StaticEntity{
 
 	public Field(Handler handler, float x, float y) {
 		super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
-		
+		hurtable = false;
 	}
 
 	@Override

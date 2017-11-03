@@ -22,7 +22,7 @@ public class WeedPlant extends StaticEntity {
 		bounds.y = 70;
 		bounds.width = 3;
 		bounds.height = 3;
-		//hurtable = true;
+		hurtable = true;
 	}
 
 	@Override
