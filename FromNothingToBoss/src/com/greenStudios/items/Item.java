@@ -16,6 +16,7 @@ public class Item {
 	
 	public static Item weedItem = new WeedItem();
 	
+	
 	//Class
 	
 	public static final int ITEMWIDTH = 32, ITEMHEIGHT = 32;

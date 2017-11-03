@@ -23,6 +23,9 @@ public class Player extends Creature {
 	//Inventory
 	private Inventory inventory;
 	
+	//Stuff
+
+	
 	
 	private EntityManager entityManager;
 	
@@ -70,6 +73,10 @@ public class Player extends Creature {
 	}
 	
 	private void checkAttacks() {
+		if(inventory.isActive()) {
+			return;
+		}
+		
 		Rectangle cb = getCollisionBounds(0, 0);
 		Rectangle ar = new Rectangle();
 		int arSize = 20;
@@ -124,6 +131,10 @@ public class Player extends Creature {
 		xMove = 0;
 		yMove = 0;
 		
+		if(inventory.isActive()) {
+			return;
+		}
+		
 		if(handler.getKeyListener().moveUp){
 			if(handler.getKeyListener().sprint){
 				animUp.setSpeed(80);
@@ -166,6 +177,7 @@ public class Player extends Creature {
 					xMove = movementSpeed;
 				}
 			}
+		
 		
 	}
 	
