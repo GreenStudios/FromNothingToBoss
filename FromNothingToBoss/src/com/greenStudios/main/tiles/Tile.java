@@ -16,7 +16,7 @@ public class Tile {
 	//Tile Initialization
 	
 	//Tile Array
-	public static Tile[] tiles = new Tile[512];
+	public static Tile[] tiles = new Tile[256];
 	
 	//Grass
 	public static Tile grass1 = new Grass1(0);
