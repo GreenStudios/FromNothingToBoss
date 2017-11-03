@@ -28,7 +28,7 @@ public abstract class Entity {
 	}
 
 	public enum Type {
-		Player, Field, House, WeedPlant, Shed
+		Player, Terain, House, WeedPlant, Shed
 	}
 
 	public abstract void tick();
@@ -55,7 +55,7 @@ public abstract class Entity {
 			if (e.equals(this))
 				continue;
 			if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
-				if (e.getType() != Type.Field) {
+				if (e.getType() != Type.Terain) {
 					return true;
 				}
 			}

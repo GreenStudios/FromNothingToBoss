@@ -1,7 +1,9 @@
 package com.greenStudios.entities;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
 
+import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.Field;
 import com.greenStudios.entities.statics.House;
@@ -87,6 +89,12 @@ public class World {
 		itemManager.render(g);
 		
 		//Entities
+		ArrayList<Entity> entities = entityManager.getEntities();
+		for(Entity e : entities){
+			if(Type.Terain == e.getType()){
+				e.render(g);
+			}
+		}
 		entityManager.render(g);
 		
 	}

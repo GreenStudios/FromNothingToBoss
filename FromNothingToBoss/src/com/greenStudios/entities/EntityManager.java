@@ -18,17 +18,9 @@ public class EntityManager {
 		@Override
 		public int compare(Entity a, Entity b) {
 			if (a.getY() + a.getHeight() < b.getY() + b.getHeight()) {
-				if (a.getType() != Type.Field) {
-					return -1;
-				} else {
-					return -1;
-				}
+				return -1;
 			} else {
-				if (a.getType() != Type.Field) {
-					return 1;
-				} else {
-					return -1;
-				}
+				return 1;
 			}
 		}
 
@@ -46,7 +38,6 @@ public class EntityManager {
 		while (it.hasNext()) {
 			Entity e = it.next();
 			e.tick();
-
 			if (!e.isActive()) {
 				it.remove();
 			}
@@ -57,7 +48,9 @@ public class EntityManager {
 
 	public void render(Graphics g) {
 		for (Entity e : entities) {
-			e.render(g);
+			if (e.getType() != Type.Terain) {
+				e.render(g);
+			}
 		}
 		player.postRender(g);
 	}

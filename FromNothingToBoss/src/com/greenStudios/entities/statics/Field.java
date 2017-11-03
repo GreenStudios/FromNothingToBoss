@@ -31,7 +31,7 @@ public class Field extends StaticEntity{
 	
 	@Override
 	public Type getType(){
-		return Type.Field;
+		return Type.Terain;
 	}
 
 }
