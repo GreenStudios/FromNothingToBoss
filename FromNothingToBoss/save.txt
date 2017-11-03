@@ -1,2 +1,0 @@
-[com.greenStudios.entities.statics.House@2533da11, com.greenStudios.entities.statics.House_Jonah1@5a8c48f1, com.greenStudios.entities.statics.BrokenHouse@204cbcf0, com.greenStudios.entities.Player@1c99f151, com.greenStudios.entities.statics.Field@27c14381]
-[]
