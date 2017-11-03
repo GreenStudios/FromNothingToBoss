@@ -18,8 +18,8 @@ public class Inventory {
 	
 	private int invX = 256, invY = 256,
 				invWidth = 512, invHeight = 512,
-				invListCenterX,
-				invListCenterY;
+				invListCenterX = 960,
+				invListCenterY = 540;
 	
 	public Inventory(Handler handler) {
 		this.handler = handler;
@@ -41,7 +41,7 @@ public class Inventory {
 		
 		g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
 		
-		Text.drawString(g, "Weed", invListCenterX, invListCenterY, false, Color.WHITE, Assets.font64);
+		Text.drawString(g, "Weed", invListCenterX, invListCenterY, false, Color.BLACK, Assets.font64);
 	}
 	
 	//Inventory Methods

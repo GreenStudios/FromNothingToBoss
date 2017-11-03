@@ -12,6 +12,7 @@ public abstract class Entity {
 	protected float x, y;
 	protected int width, height;
 	protected int health;
+	protected boolean hurtable = true;
 	protected boolean active = true;
 	protected Rectangle bounds;
 	
@@ -33,7 +34,10 @@ public abstract class Entity {
 	public abstract void die();
 	
 	public void hurt(int amt) {
-		health -= amt;
+		if(hurtable) {
+			health -= amt;
+		}
+		
 		if(health <= 0) {
 			active = false;
 			die();

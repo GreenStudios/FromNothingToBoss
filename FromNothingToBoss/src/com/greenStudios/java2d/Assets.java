@@ -25,7 +25,6 @@ public class Assets {
 
 	public static BufferedImage[] btn_fullscreen;
 	public static BufferedImage[] btn_back;
-	
 
 	
 	public static void init(){
@@ -37,7 +36,7 @@ public class Assets {
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
 		
 		//Font
-		font64 = FontLoader.loadFont("/textures/gui/Berta_Drug_01.ttf", 64); //replace font
+		font64 = FontLoader.loadFont("assets/textures/gui/8_bit_party.ttf", 64); //replace font
 		
 		//Menu Buttons
 		btn_continue = new BufferedImage[2];
@@ -110,6 +109,7 @@ public class Assets {
 		
 		//Field
 		field = ImageLoader.loadImage("/textures/terrain/field/Field.png");
+		
 		//Buildings
 		house = ImageLoader.loadImage("/textures/static_entities/buildings/house.png");
 		shed = ImageLoader.loadImage("/textures/static_entities/buildings/shed.png");
