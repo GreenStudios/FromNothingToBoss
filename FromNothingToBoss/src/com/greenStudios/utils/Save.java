@@ -15,7 +15,7 @@ public class Save {
 	
 	public Save(Handler handler) {
 		try {
-			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("/save/save.txt")));
+			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("assets/save/save.txt")));
 			pWriter.println(handler.getWorld().getEntityManager().getEntities());
 			pWriter.println(handler.getWorld().getItemManager().getItems());
 			
