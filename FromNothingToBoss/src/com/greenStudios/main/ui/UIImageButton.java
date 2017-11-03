@@ -3,6 +3,8 @@ package com.greenStudios.main.ui;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import com.greenStudios.audio.AudioPlayer;
+
 public class UIImageButton extends UIObject {
 
 	private BufferedImage[] images;

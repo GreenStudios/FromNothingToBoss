@@ -1,23 +1,30 @@
 package com.greenStudios.main.states;
 
 import java.awt.Graphics;
-import java.util.concurrent.TimeUnit;
 
+import com.greenStudios.audio.AudioPlayer;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
+import com.greenStudios.main.ui.UIObject;
 
 public class MenuState extends State {
 
 	private UIManager uiManager;
+	
+	private AudioPlayer menuMusic, selectSFX;
 
 	public MenuState(Handler handler, UIManager uiManager) {
 		super(handler);
 		this.uiManager = uiManager;
 		handler.getMouseManager().setUIManager(uiManager);
 		setButtons();
+		
+		selectSFX = new AudioPlayer("/sfx/sfx_mainMenu_buttonSelect.ogg");
+		menuMusic = new AudioPlayer("/music/bgm_mainMenu.wav");
+		menuMusic.play(-10f);
 	}
 
 	public void setButtons() {
@@ -32,6 +39,7 @@ public class MenuState extends State {
 		uiManager.addObject(new UIImageButton(600, 250, 640, 160, Assets.btn_newgame, new ClickListener() {
 			@Override
 			public void onClick() {
+				menuMusic.stop();
 				handler.getMouseManager().setUIManager(null);
 				State.setState(handler.getGame().gameState);
 				uiManager.getObjects().clear();

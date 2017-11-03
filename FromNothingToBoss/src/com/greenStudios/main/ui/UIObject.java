@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
+import com.greenStudios.audio.AudioPlayer;
+
 public abstract class UIObject {
 	
 	protected float x, y;
@@ -26,15 +28,18 @@ public abstract class UIObject {
 	public abstract void onClick();
 	
 	public void onMouseMove(MouseEvent e){
-		if(bounds.contains(e.getX(), e.getY()))
+		if(bounds.contains(e.getX(), e.getY())) {
 			hovering = true;
-		else
+		}
+		else {
 			hovering = false;
+		}
 	}
 	
 	public void onMouseRelease(MouseEvent e){
-		if(hovering)
+		if(hovering) {
 			onClick();
+		}
 	}
 	
 	// Getters and setters

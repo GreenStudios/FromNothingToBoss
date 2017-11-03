@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
 
+import com.greenStudios.audio.AudioPlayer;
 import com.greenStudios.inventory.Inventory;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
@@ -23,8 +25,8 @@ public class Player extends Creature {
 	//Inventory
 	private Inventory inventory;
 	
-	//Stuff
-
+	//SFX
+	private HashMap<String, AudioPlayer> sfx;
 	
 	
 	private EntityManager entityManager;
@@ -47,7 +49,12 @@ public class Player extends Creature {
 		animLeft = new Animation(120, Assets.player_left);
 		animRight = new Animation(120, Assets.player_right);
 		
+		//Inventory
 		inventory = new Inventory(handler);
+		
+		//SFX
+		sfx = new HashMap<String, AudioPlayer>();
+		sfx.put("move", new AudioPlayer("/sfx/sfx_player_move.wav"));
 	}
 
 	@Override
@@ -136,6 +143,7 @@ public class Player extends Creature {
 		}
 		
 		if(handler.getKeyListener().moveUp){
+			sfx.get("move").play(-15f);
 			if(handler.getKeyListener().sprint){
 				animUp.setSpeed(80);
 				yMove = -movementSpeed * 2;
@@ -147,6 +155,7 @@ public class Player extends Creature {
 		}
 		
 		else if(handler.getKeyListener().moveDown){
+			sfx.get("move").play(-15f);
 			if(handler.getKeyListener().sprint){
 				animDown.setSpeed(80);
 				yMove = movementSpeed * 2;
@@ -157,6 +166,7 @@ public class Player extends Creature {
 		}
 		
 		else if(handler.getKeyListener().moveLeft){
+			sfx.get("move").play(-15f);
 				if(handler.getKeyListener().sprint){
 					animLeft.setSpeed(80);
 					xMove = -movementSpeed * 2;
@@ -168,6 +178,7 @@ public class Player extends Creature {
 			}
 				
 		else if(handler.getKeyListener().moveRight){
+			sfx.get("move").play(-15f);
 				if(handler.getKeyListener().sprint){
 					animRight.setSpeed(80);
 					xMove = movementSpeed * 2;
