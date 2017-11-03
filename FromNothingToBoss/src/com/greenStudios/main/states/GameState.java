@@ -10,6 +10,7 @@ import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
+import com.greenStudios.utils.Save;
 
 public class GameState extends State {
 
@@ -53,8 +54,7 @@ public class GameState extends State {
 		uiManager.addObject(new UIImageButton(600, 650, 640, 160, Assets.btn_savegame, new ClickListener() {
 			@Override
 			public void onClick() {
-				
-				
+				new Save(handler);
 			}
 		}));
 		uiManager.addObject(new UIImageButton(600, 850, 640, 160, Assets.btn_quitgame, new ClickListener() {
