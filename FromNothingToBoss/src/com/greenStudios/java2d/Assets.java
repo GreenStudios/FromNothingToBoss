@@ -8,7 +8,7 @@ public class Assets {
 	
 	public static Font font28;
 	
-	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
+	public static BufferedImage grass1, grass2, grass3, grass4, grass5, grass6;
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
 	public static BufferedImage house, shed, house_jonah1, brokenhouse;
@@ -100,6 +100,7 @@ public class Assets {
 		grass3 = sheetTiles.crop(2*width, 0, width, height);
 		grass4 = sheetTiles.crop(3*width, 0, width, height);
 		grass5 = sheetTiles.crop(4*width, 0, width, height);
+		grass6 = sheetTiles.crop(5*width, 0, width, height);
 		
 		//Stone
 		
