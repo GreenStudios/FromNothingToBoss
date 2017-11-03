@@ -30,8 +30,7 @@ public class Assets {
 	public static void init(){
 		
 		//Sheets
-		SpriteSheet sheetGrass = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetGrass.png"));
-		SpriteSheet sheetWater = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetWater.png"));
+		SpriteSheet sheetTiles = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetTiles.png"));
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
 		
@@ -96,16 +95,16 @@ public class Assets {
 		player_idle[3] = sheetPlayerAnims.crop(0, 3*height, width, height);
 		
 		//Grass
-		grass1 = sheetGrass.crop(0, 0, width, height);
-		grass2 = sheetGrass.crop(width, 0, width, height);
-		grass3 = sheetGrass.crop(2*width, 0, width, height);
-		grass4 = sheetGrass.crop(3*width, 0, width, height);
-		grass5 = sheetGrass.crop(4*width, 0, width, height);
+		grass1 = sheetTiles.crop(0, 0, width, height);
+		grass2 = sheetTiles.crop(width, 0, width, height);
+		grass3 = sheetTiles.crop(2*width, 0, width, height);
+		grass4 = sheetTiles.crop(3*width, 0, width, height);
+		grass5 = sheetTiles.crop(4*width, 0, width, height);
 		
 		//Stone
 		
 		//Water
-		water1 = sheetWater.crop(0, 0, width, height);
+		water1 = sheetTiles.crop(0, height, width, height);
 		
 		//Field
 		field = ImageLoader.loadImage("/textures/terrain/field/Field.png");

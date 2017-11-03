@@ -18,17 +18,18 @@ public class Tile {
 	//Tile Array
 	public static Tile[] tiles = new Tile[256];
 	
-	//Grass
+	//Grass 0-9
 	public static Tile grass1 = new Grass1(0);
 	public static Tile grass2 = new Grass2(1);
 	public static Tile grass3 = new Grass3(2);
 	public static Tile grass4 = new Grass4(3);
 	public static Tile grass5 = new Grass5(4);
 	
-	//Stone
 	
-	//Water
-	public static Tile water1 = new Water1(5);
+	//Water 10-19
+	public static Tile water1 = new Water1(10);
+	
+	//Stone
 	
 	//CLASS
 	
