@@ -25,7 +25,8 @@ public class Assets {
 
 	public static BufferedImage[] btn_fullscreen;
 	public static BufferedImage[] btn_back;
-
+	
+	public static BufferedImage loadingscreen;
 	
 	public static void init(){
 		
@@ -123,5 +124,7 @@ public class Assets {
 		//Items
 		inventoryScreen = ImageLoader.loadImage("/textures/gui/inventory.png");
 		weedItem = ImageLoader.loadImage("/textures/items/weedItem.png");
+		
+		loadingscreen = ImageLoader.loadImage("/textures/other/LoadingScreen.png");
 	}
 }
