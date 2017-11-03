@@ -66,9 +66,18 @@ public class Item {
 		bounds.y = y;
 	}
 	
-	public Item createNew(int x, int y) {
+	//For Debugging
+	public Item createNew(int count) {
 		Item i = new Item(texture, name, id);
 		i.setPosition(x, y);
+		return i;
+		
+	}
+	
+	public Item createNew(int x, int y) {
+		Item i = new Item(texture, name, id);
+		i.setPickedUp(true);
+		i.setCount(count);
 		return i;
 		
 	}

@@ -49,6 +49,7 @@ public class EntityManager {
 		for (Entity e : entities) {
 			e.render(g);
 		}
+		player.postRender(g);
 	}
 	
 	//Adds Entity to ArrayList

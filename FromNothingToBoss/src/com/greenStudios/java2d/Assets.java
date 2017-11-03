@@ -1,9 +1,13 @@
 package com.greenStudios.java2d;
 
+import java.awt.Font;
 import java.awt.image.BufferedImage;
 
 public class Assets {
 	public static final int width = 64, height = 64;
+	
+	public static Font font64;
+	
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
@@ -16,6 +20,7 @@ public class Assets {
 	public static BufferedImage[] btn_settings;
 	public static BufferedImage[] btn_quitgame;
 
+	public static BufferedImage inventoryScreen;
 	public static BufferedImage weedItem;
 
 	public static BufferedImage[] btn_fullscreen;
@@ -30,6 +35,9 @@ public class Assets {
 		SpriteSheet sheetWater = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetWater.png"));
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
+		
+		//Font
+		font64 = FontLoader.loadFont("/textures/gui/Berta_Drug_01.ttf", 64); //replace font
 		
 		//Menu Buttons
 		btn_continue = new BufferedImage[2];
@@ -113,6 +121,7 @@ public class Assets {
 		weedPlant = ImageLoader.loadImage("/textures/static_entities/plants/weed.png");
 		
 		//Items
+		inventoryScreen = ImageLoader.loadImage("/textures/gui/inventory.png");
 		weedItem = ImageLoader.loadImage("/textures/items/weedItem.png");
 	}
 }
