@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 	public static final int width = 64, height = 64;
 	
-	public static Font font64;
+	public static Font font28;
 	
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5;
 	public static BufferedImage water1;
@@ -36,7 +36,7 @@ public class Assets {
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
 		
 		//Font
-		font64 = FontLoader.loadFont("assets/textures/gui/8_bit_party.ttf", 64); //replace font
+		font28 = FontLoader.loadFont("assets/textures/gui/8_bit_party.ttf", 28);
 		
 		//Menu Buttons
 		btn_continue = new BufferedImage[2];

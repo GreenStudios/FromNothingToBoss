@@ -16,10 +16,10 @@ public class Inventory {
 	private boolean active = false;
 	private ArrayList<Item> inventoryItems;
 	
-	private int invX = 256, invY = 256,
-				invWidth = 512, invHeight = 512,
-				invListCenterX = 960,
-				invListCenterY = 540;
+	private int invX = 800, invY = 300,
+				invWidth = 320, invHeight = 480,
+				invListCenterX = 918,
+				invListCenterY = 496;
 	
 	public Inventory(Handler handler) {
 		this.handler = handler;
@@ -41,7 +41,7 @@ public class Inventory {
 		
 		g.drawImage(Assets.inventoryScreen, invX, invY, invWidth, invHeight, null);
 		
-		Text.drawString(g, "Weed", invListCenterX, invListCenterY, false, Color.BLACK, Assets.font64);
+		Text.drawString(g, "Weed", invListCenterX, invListCenterY, true, Color.BLACK, Assets.font28);
 	}
 	
 	//Inventory Methods
