@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 
+import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.main.Handler;
 
 public class EntityManager {
-	
+
 	private Handler handler;
 	private Player player;
 	private ArrayList<Entity> entities;
@@ -16,14 +17,23 @@ public class EntityManager {
 
 		@Override
 		public int compare(Entity a, Entity b) {
-			if(a.getY() + a.getHeight() < b.getY() + b.getHeight())
-				return -1;
-			else
-				return 1;
+			if (a.getY() + a.getHeight() < b.getY() + b.getHeight()) {
+				if (a.getType() != Type.Field) {
+					return -1;
+				} else {
+					return -1;
+				}
+			} else {
+				if (a.getType() != Type.Field) {
+					return 1;
+				} else {
+					return -1;
+				}
+			}
 		}
-		
+
 	};
-	
+
 	public EntityManager(Handler handler, Player player) {
 		this.handler = handler;
 		this.player = player;
@@ -33,31 +43,31 @@ public class EntityManager {
 
 	public void tick() {
 		Iterator<Entity> it = entities.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Entity e = it.next();
 			e.tick();
-			
-			if(!e.isActive()) {
+
+			if (!e.isActive()) {
 				it.remove();
 			}
-			
+
 		}
 		entities.sort(renderSorter);
 	}
-	
+
 	public void render(Graphics g) {
 		for (Entity e : entities) {
 			e.render(g);
 		}
 		player.postRender(g);
 	}
-	
-	//Adds Entity to ArrayList
+
+	// Adds Entity to ArrayList
 	public void addEntity(Entity e) {
 		entities.add(e);
 	}
 
-	//Getters & Setters
+	// Getters & Setters
 	public Handler getHandler() {
 		return handler;
 	}
@@ -81,5 +91,5 @@ public class EntityManager {
 	public void setEntities(ArrayList<Entity> entities) {
 		this.entities = entities;
 	}
-	
+
 }
