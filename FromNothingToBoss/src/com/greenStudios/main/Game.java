@@ -88,7 +88,7 @@ public class Game implements Runnable {
 		// --Clear Screen-----
 		g.clearRect(0, 0, display.getWidth(), display.getHeight());
 		// --Draw Picture-----
-		if(State.getState() != null && timer >= 60){
+		if(State.getState() != null && timer >= 120){
 			State.getState().render(g);
 		}else{
 			g.drawImage(Assets.loadingscreen, 0, 0, 1920, 1080, null);
@@ -172,11 +172,5 @@ public class Game implements Runnable {
 	}
 	public Display getDisplay(){
 		return display;
-	}
-	public State getGameState(){
-		return gameState;
-	}
-	public UIManager getUIManager(){
-		return uiManager;
 	}
 }
