@@ -3,6 +3,7 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.items.Item;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -35,21 +36,29 @@ public class WeedPlant extends StaticEntity {
 
 	@Override
 	public void die() {
-		handler.getWorld().getItemManager().addItem(Item.weedItem.createNew((int) x, (int) y));
+		if (mature) {
+			handler.getWorld().getItemManager().addItem(Item.weedItem.createNew((int) x, (int) y));
+		}
 	}
 
 	@Override
 	public void render(Graphics g) {
 		if (mature) {
-			g.drawImage(Assets.weedPlantMature, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+			g.drawImage(Assets.weedPlantMature, (int) (x - handler.getGameCamera().getxOffset()),
+					(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		} else {
-			g.drawImage(Assets.weedPlant, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+			g.drawImage(Assets.weedPlant, (int) (x - handler.getGameCamera().getxOffset()),
+					(int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		}
 		if (drawCollision) {
 			g.setColor(Color.red);
 			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
 					(int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		}
+	}
+	@Override
+	public Type getType(){
+		return Type.WeedPlant;
 	}
 
 }

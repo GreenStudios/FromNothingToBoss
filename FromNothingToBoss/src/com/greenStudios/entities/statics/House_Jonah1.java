@@ -3,6 +3,7 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
@@ -40,6 +41,10 @@ public class House_Jonah1 extends StaticEntity{
 			g.setColor(Color.red);
 			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		}
+	}
+	@Override
+	public Type getType(){
+		return Type.House;
 	}
 }
 

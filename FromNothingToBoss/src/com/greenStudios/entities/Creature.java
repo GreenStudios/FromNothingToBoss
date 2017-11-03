@@ -3,69 +3,72 @@ package com.greenStudios.entities;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public abstract class Creature extends Entity{
+public abstract class Creature extends Entity {
 
 	public static final float DEFAULT_SPEED = 2;
 	public static final int DEFAULT_CREATURE_WIDTH = 64, DEFAULT_CREATURE_HEIGHT = 64;
-	
+
 	protected float movementSpeed;
 	protected float xMove, yMove;
-	
+
 	public Creature(Handler handler, float x, float y, int width, int height) {
 		super(handler, x, y, width, height);
 		movementSpeed = DEFAULT_SPEED;
 	}
 
-	public void move(){
-		if(!checkEntityCollisions(xMove, 0f))
+	public void move() {
+		if (!checkEntityCollisions(xMove, 0f)) {
 			moveX();
-		if(!checkEntityCollisions(0f, yMove))
+		}
+
+		if (!checkEntityCollisions(0f, yMove)) {
 			moveY();
+		}
+
 	}
-	
+
 	public void moveX() {
-		if(xMove > 0) {//Moving right
+		if (xMove > 0) {// Moving right
 			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
-			
-			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-				!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)) {
+
+			if (!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT)
+					&& !collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)) {
 				x += xMove;
 			}
-		}
-		else if(xMove < 0) {//Moving Left
+		} else if (xMove < 0) {// Moving Left
 			int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
-			
-			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-				!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)) {
+
+			if (!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT)
+					&& !collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)) {
 				x += xMove;
 			}
 		}
 	}
-	
+
 	public void moveY() {
-		if(yMove < 0) {//Up
+		if (yMove < 0) {// Up
 			int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
-			
-			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
-					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)) {
+
+			if (!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty)
+					&& !collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)) {
 				y += yMove;
 			}
-			
-		}else if(yMove > 0) {//Down
+
+		} else if (yMove > 0) {// Down
 			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
-			
-			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
-					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)) {
+
+			if (!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty)
+					&& !collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)) {
 				y += yMove;
-			
+
 			}
 		}
 	}
-	
+
 	protected boolean collisionWithTile(int x, int y) {
 		return handler.getWorld().getTile(x, y).isSolid();
 	}
-	
+
 	public float getxMove() {
 		return xMove;
 	}

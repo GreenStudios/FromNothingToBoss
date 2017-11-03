@@ -2,6 +2,7 @@ package com.greenStudios.entities.statics;
 
 import java.awt.Graphics;
 
+import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
@@ -26,6 +27,11 @@ public class Field extends StaticEntity{
 	@Override
 	public void die() {
 
+	}
+	
+	@Override
+	public Type getType(){
+		return Type.Field;
 	}
 
 }
