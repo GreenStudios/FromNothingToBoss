@@ -215,6 +215,19 @@ public class Player extends Creature {
 		}
 		
 	}
+	
+	public boolean onField(){
+		if (checkTerainCollisions(xMove, 0f)) {
+			
+			return true;
+		}
+
+		if (checkTerainCollisions(0f, yMove)) {
+			
+			return true;
+		}
+		return false;
+	}
 
 	public Inventory getInventory() {
 		return inventory;

@@ -15,8 +15,9 @@ public class WeedPlant extends StaticEntity {
 	private int growTime = 0;
 	private final static int NEEDED_GROW_TIME = 60 * 10;
 	private boolean mature = false;
+	private Field myField;
 
-	public WeedPlant(Handler handler, float x, float y) {
+	public WeedPlant(Handler handler, float x, float y, Field myField) {
 		super(handler, x, y, Tile.TILEWIDTH, 96);
 
 		bounds.x = width / 2;
@@ -24,6 +25,9 @@ public class WeedPlant extends StaticEntity {
 		bounds.width = 3;
 		bounds.height = 3;
 		hurtable = true;
+		this.myField = myField;
+		collision = false;
+		myField.setPlant(this);
 	}
 
 	@Override
@@ -37,6 +41,7 @@ public class WeedPlant extends StaticEntity {
 	@Override
 	public void die() {
 		if (mature) {
+			myField.setPlanted(false);
 			handler.getWorld().getItemManager().addItem(Item.weedItem.createNew((int) x, (int) y));
 		}
 	}

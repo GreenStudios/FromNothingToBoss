@@ -15,6 +15,7 @@ public abstract class Entity {
 	protected boolean hurtable = true;
 	protected boolean active = true;
 	protected Rectangle bounds;
+	protected boolean collision = true;
 
 	public Entity(Handler handler, float x, float y, int width, int height) {
 		this.handler = handler;
@@ -50,12 +51,29 @@ public abstract class Entity {
 		}
 	}
 
+	public boolean checkTerainCollisions(float xOffset, float yOffset) {
+		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+			if (e.equals(this))
+				continue;
+			if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
+				if (e.getType() == Type.Terain) {
+					handler.getWorld().setLastTerainCol(e);
+					return true;
+				}
+
+			}
+		}
+		return false;
+	}
+
 	public boolean checkEntityCollisions(float xOffset, float yOffset) {
 		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
 			if (e.equals(this))
 				continue;
 			if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
+				if (e.getCollision()) {
 					return true;
+				}
 			}
 		}
 		return false;
@@ -112,6 +130,9 @@ public abstract class Entity {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	public boolean getCollision(){
+		return collision;
 	}
 
 }

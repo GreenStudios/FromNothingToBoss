@@ -28,6 +28,7 @@ public class Game implements Runnable {
 	private BufferStrategy bs;
 	private Graphics g;
 	private UIManager uiManager;
+	private int timer;
 	//-------------------------------------
 	//States
 	public State gameState;
@@ -72,6 +73,7 @@ public class Game implements Runnable {
 		if(State.getState() != null){
 			State.getState().tick();
 		}
+		timer++;
 	}
 
 	private void render() {
@@ -86,8 +88,10 @@ public class Game implements Runnable {
 		// --Clear Screen-----
 		g.clearRect(0, 0, display.getWidth(), display.getHeight());
 		// --Draw Picture-----
-		if(State.getState() != null){
+		if(State.getState() != null && timer >= 120){
 			State.getState().render(g);
+		}else{
+			g.drawImage(Assets.loadingscreen, 0, 0, 1920, 1080, null);
 		}
 		// -------------------
 		bs.show();
