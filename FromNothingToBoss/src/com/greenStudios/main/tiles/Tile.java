@@ -9,6 +9,9 @@ import com.greenStudios.main.tiles.grass.Grass3;
 import com.greenStudios.main.tiles.grass.Grass4;
 import com.greenStudios.main.tiles.grass.Grass5;
 import com.greenStudios.main.tiles.grass.Grass6;
+import com.greenStudios.main.tiles.street.sideStreet1;
+import com.greenStudios.main.tiles.street.sideStreet2;
+import com.greenStudios.main.tiles.street.straightStreet;
 import com.greenStudios.main.tiles.water.Water1;
 
 public class Tile {
@@ -31,7 +34,10 @@ public class Tile {
 	//Water 10-19
 	public static Tile water1 = new Water1(10);
 	
-	//Stone
+	//Street
+	public static Tile straightStreet = new straightStreet(20);
+	public static Tile sideStreet1 = new sideStreet1(21);
+	public static Tile sideStreet2 = new sideStreet2(22);
 	
 	//CLASS
 	

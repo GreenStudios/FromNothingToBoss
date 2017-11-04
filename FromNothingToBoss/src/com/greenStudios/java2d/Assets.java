@@ -10,6 +10,7 @@ public class Assets {
 	
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5, grass6;
 	public static BufferedImage water1;
+	public static BufferedImage straightStreet, sideStreet1, sideStreet2;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
 	public static BufferedImage house, shed, house_jonah1, brokenhouse;
 	public static BufferedImage weedPlantMature, weedPlant;
@@ -108,7 +109,10 @@ public class Assets {
 		grass5 = sheetTiles.crop(4*width, 0, width, height);
 		grass6 = sheetTiles.crop(5*width, 0, width, height);
 		
-		//Stone
+		//Street
+		straightStreet = ImageLoader.loadImage("/textures/straightStreet.png");
+		sideStreet1 = ImageLoader.loadImage("/textures/sideStreet1.png");
+		sideStreet2 = ImageLoader.loadImage("/textures/sideStreet2.png");
 		
 		//Water
 		water1 = sheetTiles.crop(0, height, width, height);
