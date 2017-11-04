@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
+import com.greenStudios.hud.HUD;
 import com.greenStudios.inventory.Inventory;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
@@ -20,8 +21,9 @@ public class Player extends Creature {
 	//0 = Down, 1 = Up, 2 = Left, 3 = Right
 	private int lastAnim;
 	
-	//Inventory
+	//HUD
 	private Inventory inventory;
+	private HUD hud;
 	
 	//Stuff
 
@@ -48,6 +50,7 @@ public class Player extends Creature {
 		animRight = new Animation(120, Assets.player_right);
 		
 		inventory = new Inventory(handler);
+		hud = new HUD(handler);
 	}
 
 	@Override
@@ -70,6 +73,7 @@ public class Player extends Creature {
 		
 		//Inventory
 		inventory.tick();
+		hud.tick();
 	}
 	
 	private void checkAttacks() {
@@ -194,6 +198,7 @@ public class Player extends Creature {
 	}
 	
 	public void postRender(Graphics g) {
+		hud.render(g);
 		inventory.render(g);
 	}
 	
@@ -235,6 +240,22 @@ public class Player extends Creature {
 
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
+	}
+	
+	public int getHealth() {
+		return health;
+	}
+	
+	public void setHealth(int damage) {
+		health -= damage;
+	}
+	
+	public int getArmor() {
+		return armor;
+	}
+	
+	public void setArmor(int damage) {
+		armor -= damage;
 	}
 	
 	@Override

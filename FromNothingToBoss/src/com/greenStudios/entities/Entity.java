@@ -8,10 +8,11 @@ import com.greenStudios.main.Handler;
 public abstract class Entity {
 
 	public static final int DEFAULT_HEALTH = 100;
+	public static final int DEFAULT_ARMOR = 0;
 	protected Handler handler;
 	protected float x, y;
 	protected int width, height;
-	protected int health;
+	protected int health, armor;
 	protected boolean hurtable = true;
 	protected boolean active = true;
 	protected Rectangle bounds;
@@ -24,7 +25,8 @@ public abstract class Entity {
 		this.width = width;
 		this.height = height;
 		health = DEFAULT_HEALTH;
-
+		armor = DEFAULT_ARMOR;
+		
 		bounds = new Rectangle(0, 0, width, height);
 	}
 

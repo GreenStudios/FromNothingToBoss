@@ -22,7 +22,9 @@ public class Assets {
 	public static BufferedImage[] btn_quitgame;
 	public static BufferedImage[] btn_savegame;
 	
+	public static BufferedImage hud;
 	public static BufferedImage inventoryScreen;
+	
 	public static BufferedImage weedItem;
 
 	public static BufferedImage[] btn_fullscreen;
@@ -38,6 +40,7 @@ public class Assets {
 		SpriteSheet sheetPlayerAnims = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetPlayerAnims.png"));
 		SpriteSheet sheetMenu = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetmenubutton.png"));
 		SpriteSheet sheetSave = new SpriteSheet(ImageLoader.loadImage("/textures/sheets/sheetsavebuttons.png"));
+		
 		//Font
 		font28 = FontLoader.loadFont("assets/textures/gui/8_bit_party.ttf", 28);
 		
@@ -133,6 +136,8 @@ public class Assets {
 		//Items
 		inventoryScreen = ImageLoader.loadImage("/textures/gui/inventory.png");
 		weedItem = ImageLoader.loadImage("/textures/items/weedItem.png");
+		
+		hud = ImageLoader.loadImage("/textures/gui/hud.png");
 		
 		loadingscreen = ImageLoader.loadImage("/textures/other/LoadingScreen.png");
 	}
