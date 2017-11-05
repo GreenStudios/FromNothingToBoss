@@ -27,7 +27,6 @@ public class House extends StaticEntity{
 		trigger.height = 20;
 		
 		hurtable = false;
-		
 	}
 
 	@Override
@@ -59,9 +58,6 @@ public class House extends StaticEntity{
 		return Type.House;
 	}
 	
-	public void onTrigger() {
-		handler.getWorldManager().setWorld("shop");
-	}
 	
 
 }
