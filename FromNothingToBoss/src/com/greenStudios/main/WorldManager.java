@@ -35,7 +35,7 @@ public class WorldManager {
 		currentWorld.render(g);
 	}
 	
-	public void setCurrentWorld(World w) {
+	private void setCurrentWorld(World w) {
 		currentWorld = w;
 		handler.setWorld(currentWorld);
 	}
