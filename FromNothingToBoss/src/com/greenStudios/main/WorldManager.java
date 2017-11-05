@@ -2,8 +2,8 @@ package com.greenStudios.main;
 
 import java.awt.Graphics;
 
-import com.greenStudios.entities.World;
 import com.greenStudios.main.ui.UIManager;
+import com.greenStudios.worlds.World;
 
 public class WorldManager {
 	

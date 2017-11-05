@@ -1,10 +1,10 @@
 package com.greenStudios.main;
 
-import com.greenStudios.entities.World;
 import com.greenStudios.java2d.Display;
 import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.KeyManager;
 import com.greenStudios.listeners.MouseManager;
+import com.greenStudios.worlds.World;
 
 public class Handler {
 	

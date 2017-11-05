@@ -3,7 +3,6 @@ package com.greenStudios.main.states;
 import java.awt.Graphics;
 
 import com.greenStudios.entities.Player;
-import com.greenStudios.entities.World;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -12,6 +11,7 @@ import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
 import com.greenStudios.utils.Save;
+import com.greenStudios.worlds.World;
 
 public class GameState extends State {
 

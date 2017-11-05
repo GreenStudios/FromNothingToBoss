@@ -3,11 +3,11 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.greenStudios.entities.World;
 import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
+import com.greenStudios.worlds.World;
 
 public class House extends StaticEntity{
 	

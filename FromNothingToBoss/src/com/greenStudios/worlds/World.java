@@ -1,8 +1,11 @@
-package com.greenStudios.entities;
+package com.greenStudios.worlds;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import com.greenStudios.entities.Entity;
+import com.greenStudios.entities.EntityManager;
+import com.greenStudios.entities.Player;
 import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.Field;
@@ -17,13 +20,14 @@ import com.greenStudios.utils.Utils;
 public class World {
 
 	private Handler handler;
-	private int width;
-	private int height;
-	private int spawnX, spawnY;
-	private int[][] tiles;
+	protected int width;
+	protected int height;
+	protected int spawnX, spawnY;
+	protected int[][] tiles;
 	private Field lastTerainCol;
 	private int timer = 0;
 	private boolean actionallow = true;
+	
 	// Entities
 	private EntityManager entityManager;
 
@@ -32,15 +36,9 @@ public class World {
 
 	public World(Handler handler, String path) {
 		this.handler = handler;
+		
 		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
 		itemManager = new ItemManager(handler);
-
-		entityManager.addEntity(new House(handler, 8 * 64, 155));
-		// entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
-		// entityManager.addEntity(new Shed(handler, 14*64, 3*64));
-		entityManager.addEntity(new Field(handler, 11 * 64, 11 * 64));
-		entityManager.addEntity(new House_Jonah1(handler, 2 * 64, 2 * 64));
-		entityManager.addEntity(new BrokenHouse(handler, 18 * 64, 2 * 64));
 
 		loadWorld(path);
 
