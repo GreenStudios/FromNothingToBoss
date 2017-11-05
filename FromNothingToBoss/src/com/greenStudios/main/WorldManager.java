@@ -8,7 +8,6 @@ import com.greenStudios.main.ui.UIManager;
 public class WorldManager {
 	
 	private World wMain, wShop;
-	private UIManager uimanager;
 	private Handler handler;
 	private World currentWorld;
 	

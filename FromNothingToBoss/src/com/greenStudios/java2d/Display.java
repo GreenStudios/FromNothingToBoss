@@ -15,7 +15,7 @@ public class Display {
 
 	private String title;
 	private int width, height;
-	private boolean fullscreen = false;
+	private boolean fullscreen = true;
 	
 	private GraphicsDevice device;
 

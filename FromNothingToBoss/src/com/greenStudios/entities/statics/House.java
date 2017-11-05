@@ -31,8 +31,9 @@ public class House extends StaticEntity{
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
-		
+		if(checkTriggerCollisions(0, 0) == true){
+			onTrigger();
+		}
 	}
 	
 	@Override
