@@ -1,2 +1,6 @@
-[com.greenStudios.entities.statics.House@472dec7a, com.greenStudios.entities.statics.House_Jonah1@4b0b2513, com.greenStudios.entities.statics.BrokenHouse@7225ce97, com.greenStudios.entities.Player@4184d99c, com.greenStudios.entities.statics.Field@6962b3ea]
-[]
+com.greenStudios.entities.statics.House@49e5dc59
+com.greenStudios.entities.statics.House_Jonah1@1ef4d209
+com.greenStudios.entities.statics.BrokenHouse@172b74bc
+com.greenStudios.entities.Player@7c61686e
+com.greenStudios.entities.statics.WeedPlant@1b0164af
+com.greenStudios.entities.statics.Field@23dd895c
