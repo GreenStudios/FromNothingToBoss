@@ -7,7 +7,6 @@ import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
 
-import com.greenStudios.listeners.KeyManager;
 
 public class Display {
 

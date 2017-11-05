@@ -5,6 +5,10 @@ import com.greenStudios.main.tiles.Tile;
 
 public abstract class Creature extends Entity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -352681679998607964L;
 	public static final float DEFAULT_SPEED = 2;
 	public static final int DEFAULT_CREATURE_WIDTH = 64, DEFAULT_CREATURE_HEIGHT = 64;
 

@@ -3,7 +3,6 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.items.Item;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -11,6 +10,10 @@ import com.greenStudios.main.tiles.Tile;
 
 public class WeedPlant extends StaticEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 65314846836937079L;
 	private boolean drawCollision = false;
 	private int growTime = 0;
 	private final static int NEEDED_GROW_TIME = 60 * 10;

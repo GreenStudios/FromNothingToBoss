@@ -1,7 +1,6 @@
 package com.greenStudios.main.states;
 
 import java.awt.Graphics;
-import java.util.concurrent.TimeUnit;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;

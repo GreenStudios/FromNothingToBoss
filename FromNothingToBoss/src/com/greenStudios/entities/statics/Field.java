@@ -2,13 +2,16 @@ package com.greenStudios.entities.statics;
 
 import java.awt.Graphics;
 
-import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
 public class Field extends StaticEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2070303006411044984L;
 	private boolean planted = false;
 	private WeedPlant myPlant;
 	

@@ -12,6 +12,10 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 public class Player extends Creature {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7390771589234524944L;
 	//Animations
 	private Animation animDown;
 	private Animation animUp;
@@ -24,13 +28,7 @@ public class Player extends Creature {
 	//HUD
 	private Inventory inventory;
 	private HUD hud;
-	
-	//Stuff
-
-	
-	
-	private EntityManager entityManager;
-	
+		
 	private boolean drawCollision = false;
 	
 	public Player(Handler handler, float x, float y) {

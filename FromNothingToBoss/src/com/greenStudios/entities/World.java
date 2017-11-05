@@ -8,7 +8,6 @@ import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.Field;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.entities.statics.House_Jonah1;
-import com.greenStudios.entities.statics.Shed;
 import com.greenStudios.entities.statics.WeedPlant;
 import com.greenStudios.items.ItemManager;
 import com.greenStudios.main.Handler;

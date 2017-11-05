@@ -3,13 +3,16 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
 public class House_Jonah1 extends StaticEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4787800076568385398L;
 	private boolean drawCollision = false;
 
 	public House_Jonah1(Handler handler, float x, float y) {

@@ -3,9 +3,6 @@ package com.greenStudios.listeners;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import com.greenStudios.main.Game;
-import com.greenStudios.main.Handler;
-
 public class KeyManager implements KeyListener {
 
 	private boolean[] keys, justPressed, cantPress;

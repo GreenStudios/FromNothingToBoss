@@ -3,13 +3,16 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
 public class Shed extends StaticEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2543011365577134346L;
 	private boolean drawCollision = true;
 
 	public Shed(Handler handler, float x, float y) {

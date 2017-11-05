@@ -3,6 +3,7 @@ package com.greenStudios.main;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.io.Serializable;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.java2d.Display;
@@ -15,7 +16,11 @@ import com.greenStudios.main.states.SettingsState;
 import com.greenStudios.main.states.State;
 import com.greenStudios.main.ui.UIManager;
 
-public class Game implements Runnable {
+public class Game implements Runnable, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5641471975823028179L;
 	//Frame
 	private final Display display;
 	//Listeners

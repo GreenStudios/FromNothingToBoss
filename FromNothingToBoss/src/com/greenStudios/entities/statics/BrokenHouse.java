@@ -9,6 +9,10 @@ import com.greenStudios.main.tiles.Tile;
 
 public class BrokenHouse extends StaticEntity{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4896591513143080231L;
 	private boolean drawCollision = false;
 
 	public BrokenHouse(Handler handler, float x, float y) {

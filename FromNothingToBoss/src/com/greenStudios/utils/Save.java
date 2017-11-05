@@ -1,40 +1,39 @@
 package com.greenStudios.utils;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
-import com.greenStudios.entities.Entity;
-import com.greenStudios.items.Item;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import com.greenStudios.main.Handler;
 
 public class Save {
 
-	private PrintWriter pWriter;
+	private String dateiname = "save";
 
 	public Save(Handler handler) {
-		try {
-			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("assets/save/save.txt")));
-			ArrayList<Entity> entities = handler.getWorld().getEntityManager().getEntities();
-			for (Entity e : entities) {
-				pWriter.println(e);
-			}
-			ArrayList<Item> items = handler.getWorld().getItemManager().getItems();
-			for(Item i : items){
-				pWriter.println(i);
-			}
-			
+		OutputStream file = null;
 
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
+		try {
+			file = new FileOutputStream(dateiname + ".ser");
+			@SuppressWarnings("resource")
+			ObjectOutputStream o = new ObjectOutputStream(file);
+
+			for (int i = 0; i < handler.getWorld().getEntityManager().getEntities().size(); i++) {
+				o.writeObject(handler.getWorld().getEntityManager().getEntities().get(i));
+				System.out.println(handler.getWorld().getEntityManager().getEntities().get(i) + "saved");
+			}
+			for (int i = 0; i < handler.getWorld().getItemManager().getItems().size(); i++) {
+				o.writeObject(handler.getWorld().getItemManager().getItems().get(i));
+				System.out.println(handler.getWorld().getItemManager().getItems().get(i) + "saved");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		} finally {
-			if (pWriter != null) {
-				pWriter.flush();
-				pWriter.close();
+			try {
+				file.close();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}
