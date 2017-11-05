@@ -3,6 +3,7 @@ package com.greenStudios.entities.statics;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import com.greenStudios.entities.World;
 import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
@@ -10,16 +11,26 @@ import com.greenStudios.main.tiles.Tile;
 
 public class House extends StaticEntity{
 	
-	private boolean drawCollision = false;
+	private boolean drawCollision = true;
+	private World shop;
+	
 
 	public House(Handler handler, float x, float y) {
 		super(handler, x, y, 5*Tile.TILEWIDTH/2, 5*Tile.TILEHEIGHT/2);
 		
 		bounds.x = 18;
-		bounds.y = 115;
+		bounds.y = 20;
 		bounds.width = 128;
-		bounds.height = 32;
+		bounds.height = 128;
+		
+		trigger.x = 35;
+		trigger.y = 140;
+		trigger.width = 40;
+		trigger.height = 20;
+		
 		hurtable = false;
+		
+		shop = new World(handler, "assets/worlds/world_test.csv");
 	}
 
 	@Override
@@ -40,6 +51,9 @@ public class House extends StaticEntity{
 		if(drawCollision) {
 			g.setColor(Color.red);
 			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+			
+			g.setColor(Color.blue);
+			g.fillRect((int) (x + trigger.x - handler.getGameCamera().getxOffset()), (int) (y + trigger.y - handler.getGameCamera().getyOffset()), trigger.width, trigger.height);
 		}
 	}
 	
@@ -47,5 +61,7 @@ public class House extends StaticEntity{
 	public Type getType(){
 		return Type.House;
 	}
+	
+	
 
 }

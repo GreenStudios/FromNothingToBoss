@@ -10,7 +10,16 @@ public class Handler {
 	
 	private Game game;
 	private World world;
+	private WorldManager worldManager;
 	
+	public WorldManager getWorldManager() {
+		return worldManager;
+	}
+
+	public void setWorldManager(WorldManager worldManager) {
+		this.worldManager = worldManager;
+	}
+
 	public Handler(Game game) {
 		this.game = game;
 	}

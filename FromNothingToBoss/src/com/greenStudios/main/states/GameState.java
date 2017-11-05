@@ -7,6 +7,7 @@ import com.greenStudios.entities.World;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
+import com.greenStudios.main.WorldManager;
 import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
@@ -14,21 +15,20 @@ import com.greenStudios.utils.Save;
 
 public class GameState extends State {
 
-	private World world;
+	private WorldManager worldManager;
 	private UIManager uiManager;
 
 	public GameState(Handler handler, UIManager uiManager) {
 		super(handler);
-		
-		world = new World(handler, "assets/worlds/world_test.csv");
-		handler.setWorld(world);
+		worldManager = new WorldManager(handler);
+		handler.setWorldManager(worldManager);
 		this.uiManager = uiManager;
 		
 	}
 
 	@Override
 	public void tick() {
-		world.tick();
+		worldManager.tick();
 		uiManager.tick();
 		if(handler.getKeyListener().pausemenu){
 			setButtons();
@@ -39,7 +39,7 @@ public class GameState extends State {
 
 	@Override
 	public void render(Graphics g) {
-		world.render(g);
+		worldManager.render(g);
 		uiManager.render(g);
 	}
 

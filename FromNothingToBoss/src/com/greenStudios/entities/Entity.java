@@ -16,7 +16,9 @@ public abstract class Entity {
 	protected boolean hurtable = true;
 	protected boolean active = true;
 	protected Rectangle bounds;
+	protected Rectangle trigger;
 	protected boolean collision = true;
+	protected boolean triggerActive = true;
 
 	public Entity(Handler handler, float x, float y, int width, int height) {
 		this.handler = handler;
@@ -28,6 +30,7 @@ public abstract class Entity {
 		armor = DEFAULT_ARMOR;
 		
 		bounds = new Rectangle(0, 0, width, height);
+		trigger = new Rectangle(0, 0, width, height);
 	}
 
 	public enum Type {
@@ -80,10 +83,29 @@ public abstract class Entity {
 		}
 		return false;
 	}
+	
+	public boolean checkTriggerCollisions(float xOffset, float yOffset) {
+		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+			if (e.equals(this))
+				continue;
+			if (e.getCollisionBounds(0f, 0f).intersects(getTriggerBounds(xOffset, yOffset))) {
+				if (e.getTrigger()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 
 	public Rectangle getCollisionBounds(float xOffset, float yOffset) {
 		return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width,
 				bounds.height);
+	}
+	
+	public Rectangle getTriggerBounds(float xOffset, float yOffset) {
+		return new Rectangle((int) (x + trigger.x + xOffset), (int) (y + trigger.y + yOffset), trigger.width,
+				trigger.height);
 	}
 
 	public float getX() {
@@ -135,6 +157,10 @@ public abstract class Entity {
 	}
 	public boolean getCollision(){
 		return collision;
+	}
+
+	public boolean getTrigger() {
+		return triggerActive;
 	}
 
 }
