@@ -12,8 +12,6 @@ import com.greenStudios.main.tiles.Tile;
 public class House extends StaticEntity{
 	
 	private boolean drawCollision = true;
-	private World shop;
-	
 
 	public House(Handler handler, float x, float y) {
 		super(handler, x, y, 5*Tile.TILEWIDTH/2, 5*Tile.TILEHEIGHT/2);
@@ -30,7 +28,6 @@ public class House extends StaticEntity{
 		
 		hurtable = false;
 		
-		shop = new World(handler, "assets/worlds/world_test.csv");
 	}
 
 	@Override
