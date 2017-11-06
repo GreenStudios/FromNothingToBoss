@@ -27,7 +27,7 @@ public class MenuState extends State {
 	}
 
 	public void setButtons() {
-		uiManager.addObject(new UIImageButton(600, 50, 640, 160, Assets.btn_continue, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 50, 640, 160, Assets.btn_continue, new ClickListener() {
 			@Override
 			public void onClick() {
 				// handler.getMouseManager().setUIManager(null);
@@ -35,7 +35,7 @@ public class MenuState extends State {
 			}
 		}));
 
-		uiManager.addObject(new UIImageButton(600, 250, 640, 160, Assets.btn_newgame, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 250, 640, 160, Assets.btn_newgame, new ClickListener() {
 			@Override
 			public void onClick() {
 				menuMusic.stop();
@@ -45,7 +45,7 @@ public class MenuState extends State {
 			}
 		}));
 
-		uiManager.addObject(new UIImageButton(600, 450, 640, 160, Assets.btn_loadgame, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 450, 640, 160, Assets.btn_loadgame, new ClickListener() {
 			@Override
 			public void onClick() {
 				menuMusic.stop();
@@ -56,7 +56,7 @@ public class MenuState extends State {
 			}
 		}));
 
-		uiManager.addObject(new UIImageButton(600, 650, 640, 160, Assets.btn_settings, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 650, 640, 160, Assets.btn_settings, new ClickListener() {
 			@Override
 			public void onClick() {
 				handler.getMouseManager().setUIManager(null);
@@ -68,7 +68,7 @@ public class MenuState extends State {
 			}
 		}));
 
-		uiManager.addObject(new UIImageButton(600, 850, 640, 160, Assets.btn_quitgame, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 850, 640, 160, Assets.btn_quitgame, new ClickListener() {
 			@Override
 			public void onClick() {
 				// handler.getMouseManager().setUIManager(null);

@@ -21,14 +21,14 @@ public class SettingsState extends State {
 
 		handler.getMouseManager().setUIManager(uiManager);
 
-		uiManager.addObject(new UIImageButton(600, 50, 640, 160, Assets.btn_fullscreen, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 50, 640, 160, Assets.btn_fullscreen, new ClickListener() {
 			@Override
 			public void onClick() {
 				handler.getGame().getDisplay().setFullscreen();
 			}
 		}));
 
-		uiManager.addObject(new UIImageButton(600, 600, 640, 160, Assets.btn_back, new ClickListener() {
+		uiManager.addObject(new UIImageButton(50, 850, 640, 160, Assets.btn_back, new ClickListener() {
 			@Override
 			public void onClick() {
 				uiManager.getObjects().clear();
