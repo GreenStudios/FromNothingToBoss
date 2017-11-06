@@ -11,7 +11,7 @@ import com.greenStudios.main.Handler;
 
 public class WorldMain extends World{
 	
-	private EntityManager entityManager;
+	
 	
 	public WorldMain(Handler handler, String path) {
 		super(handler, path);

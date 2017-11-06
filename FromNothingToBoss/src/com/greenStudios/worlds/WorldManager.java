@@ -13,7 +13,7 @@ public class WorldManager {
 	
 	public WorldManager(Handler handler) {
 		this.handler = handler;
-		wMain = new WorldMain(handler, "worlds/world_test.csv");
+		wMain = new WorldMain(handler, "assets/worlds/world_test.csv");
 		wShop = new World(handler, "assets/worlds/shop.csv");	
 		currentWorld = wMain;
 		handler.setWorld(currentWorld);
