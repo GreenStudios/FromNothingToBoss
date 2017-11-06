@@ -12,10 +12,9 @@ import com.greenStudios.main.Handler;
 public class WorldMain extends World{
 	
 	private EntityManager entityManager;
-	private Handler handler;
 	
-	public WorldMain(Handler handler) {
-		super(handler, "/worlds/world_test.csv");
+	public WorldMain(Handler handler, String path) {
+		super(handler, path);
 		
 		this.handler = handler;
 		
@@ -25,20 +24,10 @@ public class WorldMain extends World{
 		entityManager.addEntity(new Field(handler, 11 * 64, 11 * 64));
 		entityManager.addEntity(new House_Jonah1(handler, 2 * 64, 2 * 64));
 		entityManager.addEntity(new BrokenHouse(handler, 18 * 64, 2 * 64));
-
-		entityManager.getPlayer().setX(spawnX); // Loads spawnX from world1
-		entityManager.getPlayer().setY(spawnY); // Loads spawnY from world1
+		
+		
+		
 	}
 	
-	public void tick() {
-		//handler.getWorldManager().tick();
-		//handler.getWorld().tick();
-		//entityManager.tick();
-	}
 	
-	public void render(Graphics g) {
-		//handler.getWorldManager().tick();
-		//handler.getWorld().render(g);
-		//entityManager.render(g);
-	}
 }

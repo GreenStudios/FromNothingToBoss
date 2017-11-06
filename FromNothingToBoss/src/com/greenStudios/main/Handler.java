@@ -5,6 +5,7 @@ import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.KeyManager;
 import com.greenStudios.listeners.MouseManager;
 import com.greenStudios.worlds.World;
+import com.greenStudios.worlds.WorldManager;
 
 public class Handler {
 	

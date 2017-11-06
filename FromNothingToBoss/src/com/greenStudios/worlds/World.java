@@ -19,20 +19,20 @@ import com.greenStudios.utils.Utils;
 
 public class World {
 
-	private Handler handler;
+	protected Handler handler;
 	protected int width;
 	protected int height;
 	protected int spawnX, spawnY;
 	protected int[][] tiles;
-	private Field lastTerainCol;
-	private int timer = 0;
-	private boolean actionallow = true;
+	protected Field lastTerainCol;
+	protected int timer = 0;
+	protected boolean actionallow = true;
 	
 	// Entities
-	private EntityManager entityManager;
+	protected EntityManager entityManager;
 
 	// Item
-	private ItemManager itemManager;
+	protected ItemManager itemManager;
 
 	public World(Handler handler, String path) {
 		this.handler = handler;
@@ -56,7 +56,7 @@ public class World {
 		}
 	}
 
-	private void getInput() {
+	protected void getInput() {
 		if (handler.getKeyListener().action && entityManager.getPlayer().onField() && actionallow) {
 			if (!lastTerainCol.getPlanted()) {
 				entityManager.addEntity(
@@ -130,7 +130,7 @@ public class World {
 		return t;
 	}
 
-	private void loadWorld(String path) {
+	protected void loadWorld(String path) {
 		String file = Utils.loadFileAsString(path);
 		String[] tokens = file.split("\\s+");
 		width = Utils.parseInt(tokens[0]);

@@ -6,12 +6,12 @@ import com.greenStudios.entities.Player;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
-import com.greenStudios.main.WorldManager;
 import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
 import com.greenStudios.utils.Save;
 import com.greenStudios.worlds.World;
+import com.greenStudios.worlds.WorldManager;
 
 public class GameState extends State {
 

@@ -1,9 +1,9 @@
-package com.greenStudios.main;
+package com.greenStudios.worlds;
 
 import java.awt.Graphics;
 
+import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.UIManager;
-import com.greenStudios.worlds.World;
 
 public class WorldManager {
 	
@@ -13,7 +13,7 @@ public class WorldManager {
 	
 	public WorldManager(Handler handler) {
 		this.handler = handler;
-		wMain = new World(handler, "assets/worlds/world_test.csv");
+		wMain = new WorldMain(handler, "worlds/world_test.csv");
 		wShop = new World(handler, "assets/worlds/shop.csv");	
 		currentWorld = wMain;
 		handler.setWorld(currentWorld);
