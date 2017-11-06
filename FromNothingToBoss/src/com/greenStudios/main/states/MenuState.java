@@ -22,8 +22,8 @@ public class MenuState extends State {
 		handler.getMouseManager().setUIManager(uiManager);
 		setButtons();
 
-		menuMusic = new AudioPlayer("/music/bgm_mainMenu.wav");
-		menuMusic.loop(-10f);
+		menuMusic = new AudioPlayer("/music/bgm_menu.wav");
+		menuMusic.loop();
 	}
 
 	public void setButtons() {
