@@ -2,13 +2,14 @@ package com.greenStudios.entities.statics;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import com.greenStudios.items.Item;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class WeedPlant extends StaticEntity {
+public class WeedPlant extends StaticEntity implements Serializable {
 
 	/**
 	 * 

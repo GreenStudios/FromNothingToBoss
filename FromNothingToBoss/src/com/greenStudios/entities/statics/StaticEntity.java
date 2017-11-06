@@ -1,9 +1,11 @@
 package com.greenStudios.entities.statics;
 
+import java.io.Serializable;
+
 import com.greenStudios.entities.Entity;
 import com.greenStudios.main.Handler;
 
-public abstract class StaticEntity extends Entity{
+public abstract class StaticEntity extends Entity implements Serializable{
 
 	/**
 	 * 

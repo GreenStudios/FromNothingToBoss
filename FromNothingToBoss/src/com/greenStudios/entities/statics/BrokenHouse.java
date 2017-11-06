@@ -2,12 +2,13 @@ package com.greenStudios.entities.statics;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class BrokenHouse extends StaticEntity{
+public class BrokenHouse extends StaticEntity implements Serializable{
 
 	/**
 	 * 

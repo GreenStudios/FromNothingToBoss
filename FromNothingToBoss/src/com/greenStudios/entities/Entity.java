@@ -2,8 +2,10 @@ package com.greenStudios.entities;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.io.Serializable;
 
 import com.greenStudios.main.Handler;
+
 
 public abstract class Entity {
 

@@ -1,12 +1,13 @@
 package com.greenStudios.entities.statics;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class Field extends StaticEntity{
+public class Field extends StaticEntity implements Serializable{
 
 	/**
 	 * 

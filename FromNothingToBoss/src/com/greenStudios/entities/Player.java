@@ -4,18 +4,18 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 import com.greenStudios.hud.HUD;
 import com.greenStudios.inventory.Inventory;
 import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
-public class Player extends Creature {
+public class Player extends Creature{
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7390771589234524944L;
 	//Animations
 	private Animation animDown;
 	private Animation animUp;

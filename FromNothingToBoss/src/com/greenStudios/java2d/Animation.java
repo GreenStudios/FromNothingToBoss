@@ -1,9 +1,14 @@
 package com.greenStudios.java2d;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 public class Animation {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8149660526268846767L;
 	private int speed, index;
 	private long lastTime, timer;
 	private BufferedImage[] frames;
