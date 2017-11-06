@@ -11,6 +11,7 @@ public class Assets {
 	public static BufferedImage grass1, grass2, grass3, grass4, grass5, grass6;
 	public static BufferedImage water1;
 	public static BufferedImage straightStreet, sideStreet1, sideStreet2;
+	public static BufferedImage voidTile;
 	public static BufferedImage[] player_down, player_up, player_left, player_right, player_idle;
 	public static BufferedImage house, shed, house_jonah1, brokenhouse;
 	public static BufferedImage weedPlantMature, weedPlant;
@@ -122,6 +123,8 @@ public class Assets {
 		
 		//Field
 		field = ImageLoader.loadImage("/textures/terrain/field/Field.png");
+		
+		voidTile = sheetTiles.crop(0, 2*height, width, height);
 		
 		//Buildings
 		house = ImageLoader.loadImage("/textures/static_entities/buildings/house.png");

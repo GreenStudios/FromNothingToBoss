@@ -21,11 +21,14 @@ public class Game implements Runnable, Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5641471975823028179L;
+	
 	//Frame
 	private final Display display;
+	
 	//Listeners
 	private final KeyManager keyManager;
 	private final MouseManager mouseManager;
+	
 	//-------------------------------------
 	private boolean running;
 	private Thread mainThread;
@@ -35,10 +38,12 @@ public class Game implements Runnable, Serializable{
 	private UIManager uiManager;
 	private int timer;
 	//-------------------------------------
+	
 	//States
 	public State gameState;
 	public State menuState;
 	public State settingsState;
+	
 	//Camera
 	private GameCamera gameCamera;
 	
