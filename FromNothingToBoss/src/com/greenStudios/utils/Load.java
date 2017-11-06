@@ -7,21 +7,26 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 import com.greenStudios.entities.Entity;
+import com.greenStudios.entities.statics.House;
 import com.greenStudios.main.Handler;
 
 public class Load {
 
 	public static boolean load = false;
 	private int count = 0;
-
+	private ArrayList<Entity> entities;
+	
+	@SuppressWarnings("unchecked")
 	public Load(Handler handler) {
 		InputStream fis = null;
 
 		FileReader fr;
 		try {
 			fr = new FileReader("assets/save/save.txt");
+			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(fr);
 			String zeile1;
 			zeile1 = br.readLine();
@@ -33,16 +38,16 @@ public class Load {
 
 		try {
 			fis = new FileInputStream("assets/save/save.ser");
+			@SuppressWarnings("resource")
 			ObjectInputStream o = new ObjectInputStream(fis);
-			String string = (String) o.readObject();
 
-			for (int i = 0; i < count; i++)
-				handler.getWorldManager().getCurrentWorld().getEntityManager().addEntity((Entity) o.readObject());
+				entities = (ArrayList<Entity>) o.readObject();
+				handler.getWorldManager().getCurrentWorld().getEntityManager().setEntities(entities);
 
 		} catch (IOException e) {
-			System.err.println(e);
+			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			System.err.println(e);
+			e.printStackTrace();
 		} finally {
 			try {
 				fis.close();

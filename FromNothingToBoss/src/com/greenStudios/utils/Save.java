@@ -10,13 +10,16 @@ import java.io.NotSerializableException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
+import com.greenStudios.entities.Entity;
 import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.main.Handler;
 
 public class Save {
 
 	private int count = 0;
+	private ArrayList<Entity> entities;
 
 	public Save(Handler handler) throws IOException {
 		OutputStream file = null;
@@ -25,14 +28,17 @@ public class Save {
 			file = new FileOutputStream("assets/save/save.ser");
 			@SuppressWarnings("resource")
 			ObjectOutputStream o = new ObjectOutputStream(file);
-
+			
+			entities = new ArrayList<Entity>();
+			
 			for (int i = 0; i < handler.getWorld().getEntityManager().getEntities().size(); i++) {
 				if (handler.getWorld().getEntityManager().getEntities().get(i).getType() != Type.Player) {
-					o.writeObject(handler.getWorld().getEntityManager().getEntities().get(i));
-					count++;
+					entities.add(handler.getWorld().getEntityManager().getEntities().get(i));
 				}
-
 			}
+
+			o.writeObject(entities);
+
 			for (int i = 0; i < handler.getWorld().getItemManager().getItems().size(); i++) {
 				o.writeObject(handler.getWorld().getItemManager().getItems().get(i));
 				count++;
@@ -50,7 +56,7 @@ public class Save {
 		try {
 			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("assets/save/save.txt")));
 			pWriter.println(count);
-			
+
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
