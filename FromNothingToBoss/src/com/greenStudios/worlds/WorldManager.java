@@ -38,4 +38,7 @@ public class WorldManager {
 		currentWorld = w;
 		handler.setWorld(currentWorld);
 	}
+	public World getCurrentWorld(){
+		return currentWorld;
+	}
 }

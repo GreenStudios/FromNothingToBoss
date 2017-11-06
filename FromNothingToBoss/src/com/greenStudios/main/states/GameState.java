@@ -1,6 +1,7 @@
 package com.greenStudios.main.states;
 
 import java.awt.Graphics;
+import java.io.IOException;
 
 import com.greenStudios.entities.Player;
 import com.greenStudios.entities.statics.House;
@@ -54,7 +55,12 @@ public class GameState extends State {
 		uiManager.addObject(new UIImageButton(600, 650, 640, 160, Assets.btn_savegame, new ClickListener() {
 			@Override
 			public void onClick() {
-				new Save(handler);
+				try {
+					new Save(handler);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}));
 		uiManager.addObject(new UIImageButton(600, 850, 640, 160, Assets.btn_quitgame, new ClickListener() {
