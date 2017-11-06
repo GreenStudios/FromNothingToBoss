@@ -1,5 +1,6 @@
 package com.greenStudios.main.states;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import com.greenStudios.java2d.Assets;
@@ -47,6 +48,8 @@ public class SettingsState extends State {
 
 	@Override
 	public void render(Graphics g) {
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, 1920, 1080) ;
 		uiManager.render(g);
 	}
 

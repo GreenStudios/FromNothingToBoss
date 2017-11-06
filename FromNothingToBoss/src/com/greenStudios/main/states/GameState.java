@@ -18,6 +18,7 @@ public class GameState extends State {
 
 	private WorldManager worldManager;
 	private UIManager uiManager;
+	private int rgb;
 
 	public GameState(Handler handler, UIManager uiManager) {
 		super(handler);

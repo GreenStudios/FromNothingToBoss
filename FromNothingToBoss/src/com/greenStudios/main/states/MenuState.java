@@ -1,8 +1,10 @@
 package com.greenStudios.main.states;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import com.greenStudios.audio.AudioPlayer;
+import com.greenStudios.java2d.Animation;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.ClickListener;
@@ -23,8 +25,7 @@ public class MenuState extends State {
 		setButtons();
 
 		menuMusic = new AudioPlayer("/music/bgm_mainMenu.wav");
-		menuMusic.loop();
-		
+		menuMusic.loop(-10f);
 	}
 
 	public void setButtons() {
@@ -82,12 +83,14 @@ public class MenuState extends State {
 	@Override
 	public void tick() {
 		uiManager.tick();
-
 	}
 
 	@Override
 	public void render(Graphics g) {
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, 1920, 1080) ;
 		uiManager.render(g);
+		
 	}
 
 }
