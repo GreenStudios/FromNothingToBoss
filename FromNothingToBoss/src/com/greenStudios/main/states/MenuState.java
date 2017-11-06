@@ -8,11 +8,12 @@ import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.ClickListener;
 import com.greenStudios.main.ui.UIImageButton;
 import com.greenStudios.main.ui.UIManager;
+import com.greenStudios.utils.Load;
 
 public class MenuState extends State {
 
 	private UIManager uiManager;
-	
+
 	private AudioPlayer menuMusic;
 
 	public MenuState(Handler handler, UIManager uiManager) {
@@ -20,7 +21,7 @@ public class MenuState extends State {
 		this.uiManager = uiManager;
 		handler.getMouseManager().setUIManager(uiManager);
 		setButtons();
-		
+
 		menuMusic = new AudioPlayer("/music/bgm_mainMenu.wav");
 		menuMusic.loop(-10f);
 	}
@@ -33,7 +34,7 @@ public class MenuState extends State {
 				// State.setState(handler.getGame().gameState);
 			}
 		}));
-		
+
 		uiManager.addObject(new UIImageButton(600, 250, 640, 160, Assets.btn_newgame, new ClickListener() {
 			@Override
 			public void onClick() {
@@ -43,27 +44,30 @@ public class MenuState extends State {
 				handler.getGame().gameState.setButtons();
 			}
 		}));
-		
+
 		uiManager.addObject(new UIImageButton(600, 450, 640, 160, Assets.btn_loadgame, new ClickListener() {
 			@Override
 			public void onClick() {
-				// handler.getMouseManager().setUIManager(null);
-				// State.setState(handler.getGame().gameState);
+				menuMusic.stop();
+				State.setState(handler.getGame().gameState);
+				uiManager.getObjects().clear();
+				handler.getGame().gameState.setButtons();
+				new Load(handler);
 			}
 		}));
-		
+
 		uiManager.addObject(new UIImageButton(600, 650, 640, 160, Assets.btn_settings, new ClickListener() {
 			@Override
 			public void onClick() {
 				handler.getMouseManager().setUIManager(null);
 				State.setState(handler.getGame().settingsState);
 				uiManager.getObjects().clear();
-				
+
 				handler.getGame().settingsState.setButtons();
-				
+
 			}
 		}));
-		
+
 		uiManager.addObject(new UIImageButton(600, 850, 640, 160, Assets.btn_quitgame, new ClickListener() {
 			@Override
 			public void onClick() {
@@ -71,7 +75,7 @@ public class MenuState extends State {
 				System.exit(0);
 			}
 		}));
-		
+
 	}
 
 	@Override
