@@ -33,8 +33,10 @@ public class GameState extends State {
 		uiManager.tick();
 		if(handler.getKeyListener().pausemenu){
 			setButtons();
+			handler.getWorldManager().getCurrentWorld().setPause(true);
 		}else{
 			uiManager.getObjects().clear();
+			handler.getWorldManager().getCurrentWorld().setPause(false);
 		}
 	}
 

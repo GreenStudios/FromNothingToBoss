@@ -27,7 +27,8 @@ public class World {
 	protected Field lastTerainCol;
 	protected int timer = 0;
 	protected boolean actionallow = true;
-	
+	protected boolean pause = false;
+
 	// Entities
 	protected EntityManager entityManager;
 
@@ -36,7 +37,7 @@ public class World {
 
 	public World(Handler handler, String path) {
 		this.handler = handler;
-		
+
 		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
 		itemManager = new ItemManager(handler);
 
@@ -47,12 +48,14 @@ public class World {
 	}
 
 	public void tick() {
-		itemManager.tick();
-		entityManager.tick();
-		getInput();
-		timer++;
-		if(timer >= 60){
-			actionallow = true;
+		if (!pause) {
+			itemManager.tick();
+			entityManager.tick();
+			getInput();
+			timer++;
+			if (timer >= 60) {
+				actionallow = true;
+			}
 		}
 	}
 
@@ -64,7 +67,7 @@ public class World {
 				lastTerainCol.setPlanted(true);
 				actionallow = false;
 				timer = 0;
-			}else{
+			} else {
 				lastTerainCol.getPlant().hurt(100);
 				lastTerainCol.setPlanted(false);
 				actionallow = false;
@@ -161,5 +164,8 @@ public class World {
 
 	public void setLastTerainCol(Entity lastTerainCol) {
 		this.lastTerainCol = (Field) lastTerainCol;
+	}
+	public void setPause(boolean b){
+		pause = b;
 	}
 }
