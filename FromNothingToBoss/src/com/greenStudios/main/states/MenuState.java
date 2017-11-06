@@ -24,6 +24,7 @@ public class MenuState extends State {
 
 		menuMusic = new AudioPlayer("/music/bgm_menu.wav");
 		menuMusic.loop();
+		
 	}
 
 	public void setButtons() {
