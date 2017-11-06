@@ -96,7 +96,7 @@ public class Game implements Runnable, Serializable{
 		if(State.getState() != null && timer >= 120){
 			State.getState().render(g);
 		}else{
-			g.drawImage(Assets.loadingscreen, 0, 0, 1920, 1080, null);
+			g.drawImage(Assets.loadingscreen, 0, -100, 1920, 1080, null);
 		}
 		// -------------------
 		bs.show();
