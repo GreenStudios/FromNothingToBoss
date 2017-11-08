@@ -7,11 +7,15 @@ import java.io.Serializable;
 import com.greenStudios.main.Handler;
 
 
-public abstract class Entity {
+public abstract class Entity implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6634115768774495958L;
 	public static final int DEFAULT_HEALTH = 100;
 	public static final int DEFAULT_ARMOR = 0;
-	protected Handler handler;
+	protected transient Handler handler;
 	protected float x, y;
 	protected int width, height;
 	protected int health, armor;

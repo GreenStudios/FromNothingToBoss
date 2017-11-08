@@ -8,7 +8,7 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class House_Jonah1 extends StaticEntity implements Serializable{
+public class House_Jonah1 extends StaticEntity{
 
 	/**
 	 * 

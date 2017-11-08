@@ -9,7 +9,7 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class House extends StaticEntity implements Serializable{
+public class House extends StaticEntity{
 	
 	private boolean drawCollision = true;
 

@@ -1,5 +1,7 @@
 package com.greenStudios.main;
 
+import java.io.Serializable;
+
 import com.greenStudios.java2d.Display;
 import com.greenStudios.java2d.GameCamera;
 import com.greenStudios.listeners.KeyManager;
@@ -9,6 +11,10 @@ import com.greenStudios.worlds.WorldManager;
 
 public class Handler {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4586739934698650602L;
 	private Game game;
 	private World world;
 	private WorldManager worldManager;

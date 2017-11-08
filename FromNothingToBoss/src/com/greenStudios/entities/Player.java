@@ -16,18 +16,19 @@ public class Player extends Creature{
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 5786595909239810272L;
 	//Animations
-	private Animation animDown;
-	private Animation animUp;
-	private Animation animLeft;
-	private Animation animRight;
+	private transient Animation animDown;
+	private transient Animation animUp;
+	private transient Animation animLeft;
+	private transient Animation animRight;
 	
 	//0 = Down, 1 = Up, 2 = Left, 3 = Right
 	private int lastAnim;
 	
 	//HUD
-	private Inventory inventory;
-	private HUD hud;
+	private transient Inventory inventory;
+	private transient HUD hud;
 		
 	private boolean drawCollision = false;
 	

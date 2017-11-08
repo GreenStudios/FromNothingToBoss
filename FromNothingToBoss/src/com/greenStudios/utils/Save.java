@@ -14,13 +14,14 @@ import java.util.ArrayList;
 
 import com.greenStudios.entities.Entity;
 import com.greenStudios.entities.Entity.Type;
+import com.greenStudios.items.Item;
 import com.greenStudios.main.Handler;
 
 public class Save {
 
-	private int count = 0;
 	private ArrayList<Entity> entities;
-
+	private ArrayList<Item> items;
+	
 	public Save(Handler handler) throws IOException {
 		OutputStream file = null;
 
@@ -29,20 +30,12 @@ public class Save {
 			@SuppressWarnings("resource")
 			ObjectOutputStream o = new ObjectOutputStream(file);
 			
-			entities = new ArrayList<Entity>();
+			entities = handler.getWorldManager().getwMain().getEntityManager().getEntities();
+			items = handler.getWorldManager().getwMain().getItemManager().getItems();
 			
-			for (int i = 0; i < handler.getWorld().getEntityManager().getEntities().size(); i++) {
-				if (handler.getWorld().getEntityManager().getEntities().get(i).getType() != Type.Player) {
-					entities.add(handler.getWorld().getEntityManager().getEntities().get(i));
-				}
-			}
-
 			o.writeObject(entities);
-
-			for (int i = 0; i < handler.getWorld().getItemManager().getItems().size(); i++) {
-				o.writeObject(handler.getWorld().getItemManager().getItems().get(i));
-				count++;
-			}
+			o.writeObject(items);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -52,19 +45,7 @@ public class Save {
 				e.printStackTrace();
 			}
 		}
-		PrintWriter pWriter = null;
-		try {
-			pWriter = new PrintWriter(new BufferedWriter(new FileWriter("assets/save/save.txt")));
-			pWriter.println(count);
-
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		} finally {
-			if (pWriter != null) {
-				pWriter.flush();
-				pWriter.close();
-			}
-		}
+		
 	}
 
 }

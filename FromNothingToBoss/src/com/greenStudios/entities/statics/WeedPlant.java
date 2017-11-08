@@ -9,7 +9,7 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
-public class WeedPlant extends StaticEntity implements Serializable {
+public class WeedPlant extends StaticEntity{
 
 	/**
 	 * 

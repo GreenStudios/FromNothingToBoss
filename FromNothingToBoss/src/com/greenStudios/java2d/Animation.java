@@ -3,7 +3,7 @@ package com.greenStudios.java2d;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
-public class Animation {
+public class Animation implements Serializable{
 	
 	/**
 	 * 

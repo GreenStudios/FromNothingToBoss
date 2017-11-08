@@ -50,11 +50,12 @@ public class MenuState extends State {
 		uiManager.addObject(new UIImageButton(50, 450, 640, 160, Assets.btn_loadgame, new ClickListener() {
 			@Override
 			public void onClick() {
+				new Load(handler);
 				menuMusic.stop();
 				State.setState(handler.getGame().gameState);
 				uiManager.getObjects().clear();
 				handler.getGame().gameState.setButtons();
-				new Load(handler);
+				
 			}
 		}));
 

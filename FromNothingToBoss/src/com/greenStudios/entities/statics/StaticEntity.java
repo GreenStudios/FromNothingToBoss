@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.greenStudios.entities.Entity;
 import com.greenStudios.main.Handler;
 
-public abstract class StaticEntity extends Entity implements Serializable{
+public abstract class StaticEntity extends Entity{
 
 	/**
 	 * 

@@ -1,12 +1,17 @@
 package com.greenStudios.worlds;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.UIManager;
 
-public class WorldManager {
+public class WorldManager implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2146615500297627159L;
 	private World wMain, wShop;
 	private Handler handler;
 	private World currentWorld;
@@ -41,4 +46,15 @@ public class WorldManager {
 	public World getCurrentWorld(){
 		return currentWorld;
 	}
+
+
+	public World getwMain() {
+		return wMain;
+	}
+
+	public World getwShop() {
+		return wShop;
+	}
+
+	
 }
