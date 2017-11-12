@@ -1,14 +1,19 @@
 package com.greenStudios.items;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.greenStudios.main.Handler;
 
-public class ItemManager {
+public class ItemManager implements Serializable{
 
-	private Handler handler;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1959917594794077764L;
+	private transient Handler handler;
 	private ArrayList<Item> items;
 	
 	public ItemManager(Handler handler) {

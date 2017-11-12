@@ -30,11 +30,11 @@ public class Save {
 			@SuppressWarnings("resource")
 			ObjectOutputStream o = new ObjectOutputStream(file);
 			
-			entities = handler.getWorldManager().getwMain().getEntityManager().getEntities();
-			items = handler.getWorldManager().getwMain().getItemManager().getItems();
-			
-			o.writeObject(entities);
-			o.writeObject(items);
+			//entities = handler.getWorldManager().getwMain().getEntityManager().getEntities();
+			//items = handler.getWorldManager().getwMain().getItemManager().getItems();
+			o.writeObject(handler.getWorldManager());
+			//o.writeObject(entities);
+			//o.writeObject(items);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
