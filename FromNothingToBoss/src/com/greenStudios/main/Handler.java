@@ -58,14 +58,6 @@ public class Handler {
 	public void setGame(Game game) {
 		this.game = game;
 	}
-
-	public World getWorld() {
-		return world;
-	}
-
-	public void setWorld(World world) {
-		this.world = world;
-	}
 	
 	public Display getDisplay(){
 		return game.getDisplay();

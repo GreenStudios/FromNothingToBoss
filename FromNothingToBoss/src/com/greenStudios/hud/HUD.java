@@ -29,8 +29,8 @@ public class HUD {
 	}
 	
 	public void tick() {
-		playerHP = handler.getWorld().getEntityManager().getPlayer().getHealth();
-		playerAP = handler.getWorld().getEntityManager().getPlayer().getArmor();
+		playerHP = handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getHealth();
+		playerAP = handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getArmor();
 	}
 	
 	public void render(Graphics g) {

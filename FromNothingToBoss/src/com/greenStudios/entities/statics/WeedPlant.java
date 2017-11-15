@@ -46,7 +46,7 @@ public class WeedPlant extends StaticEntity{
 	public void die() {
 		if (mature) {
 			myField.setPlanted(false);
-			handler.getWorld().getItemManager().addItem(Item.weedItem.createNew((int) x, (int) y));
+			handler.getWorldManager().getCurrentWorld().getItemManager().addItem(Item.weedItem.createNew((int) x, (int) y));
 		}
 	}
 

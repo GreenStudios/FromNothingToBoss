@@ -63,12 +63,12 @@ public abstract class Entity implements Serializable{
 	}
 
 	public boolean checkTerainCollisions(float xOffset, float yOffset) {
-		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+		for (Entity e : handler.getWorldManager().getCurrentWorld().getEntityManager().getEntities()) {
 			if (e.equals(this))
 				continue;
 			if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
 				if (e.getType() == Type.Terain) {
-					handler.getWorld().setLastTerainCol(e);
+					handler.getWorldManager().getCurrentWorld().setLastTerainCol(e);
 					return true;
 				}
 
@@ -78,7 +78,7 @@ public abstract class Entity implements Serializable{
 	}
 
 	public boolean checkEntityCollisions(float xOffset, float yOffset) {
-		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+		for (Entity e : handler.getWorldManager().getCurrentWorld().getEntityManager().getEntities()) {
 			if (e.equals(this))
 				continue;
 			if (e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset))) {
@@ -91,7 +91,7 @@ public abstract class Entity implements Serializable{
 	}
 	
 	public boolean checkTriggerCollisions(float xOffset, float yOffset) {
-		for (Entity e : handler.getWorld().getEntityManager().getEntities()) {
+		for (Entity e : handler.getWorldManager().getCurrentWorld().getEntityManager().getEntities()) {
 			if (e.equals(this))
 				continue;
 			if (e.getCollisionBounds(0f, 0f).intersects(getTriggerBounds(xOffset, yOffset))) {

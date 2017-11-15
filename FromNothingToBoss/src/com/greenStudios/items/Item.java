@@ -43,9 +43,9 @@ public class Item {
 	}
 	
 	public void tick() {
-		if(handler.getWorld().getEntityManager().getPlayer().getCollisionBounds(0f, 0f).intersects(bounds)) {
+		if(handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getCollisionBounds(0f, 0f).intersects(bounds)) {
 			pickedUp = true;
-			handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(this);
+			handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getInventory().addItem(this);
 		}
 	}
 
