@@ -27,7 +27,8 @@ public class WorldManager implements Serializable{
 
 	public void setWorld(String world) {
 		if(world == "shop") {
-			setCurrentWorld(wShop);
+			currentWorld = wShop;
+			handler.setWorld(wShop);
 		}
 	}
 	
@@ -37,11 +38,6 @@ public class WorldManager implements Serializable{
 	
 	public void render(Graphics g) {
 		currentWorld.render(g);
-	}
-	
-	private void setCurrentWorld(World w) {
-		currentWorld = w;
-		handler.setWorld(currentWorld);
 	}
 	public World getCurrentWorld(){
 		return currentWorld;
