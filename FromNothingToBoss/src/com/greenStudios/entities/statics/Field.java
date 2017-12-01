@@ -6,6 +6,7 @@ import java.io.Serializable;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
+import com.greenStudios.worlds.World;
 
 public class Field extends StaticEntity{
 
@@ -53,6 +54,9 @@ public class Field extends StaticEntity{
 	}
 	public WeedPlant getPlant(){
 		return myPlant;
+	}
+	public void setHandler(Handler handler) {
+		this.handler = handler;
 	}
 
 }

@@ -2,13 +2,14 @@ package com.greenStudios.hud;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.java2d.Text;
 import com.greenStudios.main.Handler;
 
-public class HUD {
-	
+public class HUD{
+
 	private Handler handler;
 	
 	private int hudWidth = 1920,
