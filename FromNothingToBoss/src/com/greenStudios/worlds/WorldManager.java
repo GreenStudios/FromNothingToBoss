@@ -28,18 +28,9 @@ public class WorldManager implements Serializable {
 	}
 
 	public void setWorld(String world) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if (world == "shop") {
-			currentWorld = wShop;
-=======
+
 		if(world == "shop") {
 			setCurrentWorld(wShop);
->>>>>>> parent of e0fbdea... fix
-=======
-		if(world == "shop") {
-			setCurrentWorld(wShop);
->>>>>>> parent of e0fbdea... fix
 		}
 	}
 
@@ -54,21 +45,14 @@ public class WorldManager implements Serializable {
 	public void render(Graphics g) {
 		currentWorld.render(g);
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	public World getCurrentWorld() {
-=======
-=======
->>>>>>> parent of e0fbdea... fix
+		return currentWorld;
+	}
 	
 	private void setCurrentWorld(World w) {
 		currentWorld = w;
-		handler.setWorld(currentWorld);
-	}
-	public World getCurrentWorld(){
->>>>>>> parent of e0fbdea... fix
-		return currentWorld;
+		
 	}
 
 	public World getwMain() {
