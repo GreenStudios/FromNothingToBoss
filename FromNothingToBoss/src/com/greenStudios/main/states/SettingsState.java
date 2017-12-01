@@ -53,10 +53,4 @@ public class SettingsState extends State {
 		uiManager.render(g);
 	}
 
-	@Override
-	public void resetWorldManager() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

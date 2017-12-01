@@ -13,7 +13,7 @@ public class WorldManager implements Serializable {
 	 */
 	private static final long serialVersionUID = -2146615500297627159L;
 	private World wMain, wShop;
-	private transient Handler handler;
+	private Handler handler;
 	private World currentWorld;
 
 	public WorldManager(Handler handler) {

@@ -1,7 +1,6 @@
 package com.greenStudios.entities;
 
 import java.awt.Graphics;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -9,16 +8,12 @@ import java.util.Iterator;
 import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.main.Handler;
 
-public class EntityManager implements Serializable{
+public class EntityManager {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8357253127136875659L;
-	private transient Handler handler;
+	private Handler handler;
 	private Player player;
 	private ArrayList<Entity> entities;
-	private transient Comparator<Entity> renderSorter = new Comparator<Entity>() {
+	private Comparator<Entity> renderSorter = new Comparator<Entity>() {
 
 		@Override
 		public int compare(Entity a, Entity b) {

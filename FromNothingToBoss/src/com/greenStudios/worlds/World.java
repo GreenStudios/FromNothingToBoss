@@ -1,7 +1,6 @@
 package com.greenStudios.worlds;
 
 import java.awt.Graphics;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.greenStudios.entities.Entity;
@@ -18,13 +17,9 @@ import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 import com.greenStudios.utils.Utils;
 
-public class World implements Serializable{
+public class World {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -755491550906314008L;
-	protected transient Handler handler;
+	protected Handler handler;
 	protected int width;
 	protected int height;
 	protected int spawnX, spawnY;

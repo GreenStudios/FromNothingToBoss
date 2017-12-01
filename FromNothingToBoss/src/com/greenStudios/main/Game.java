@@ -15,7 +15,6 @@ import com.greenStudios.main.states.MenuState;
 import com.greenStudios.main.states.SettingsState;
 import com.greenStudios.main.states.State;
 import com.greenStudios.main.ui.UIManager;
-import com.greenStudios.utils.Load;
 
 public class Game implements Runnable, Serializable{
 	/**
@@ -29,7 +28,7 @@ public class Game implements Runnable, Serializable{
 	//Listeners
 	private final KeyManager keyManager;
 	private final MouseManager mouseManager;
-	private final Load load;
+	
 	//-------------------------------------
 	private boolean running;
 	private Thread mainThread;
@@ -66,10 +65,10 @@ public class Game implements Runnable, Serializable{
 		
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
-		load = new Load(handler);
+		
 		this.canvas = display.getCanvas();
 		//---States-----------------
-		gameState = new GameState(handler, uiManager, load.getWorldManager());
+		gameState = new GameState(handler, uiManager);
 		menuState = new MenuState(handler, uiManager);
 		settingsState = new SettingsState(handler, uiManager);
 		State.setState(menuState);

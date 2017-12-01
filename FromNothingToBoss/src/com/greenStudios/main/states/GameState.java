@@ -18,23 +18,24 @@ public class GameState extends State {
 
 	private WorldManager worldManager;
 	private UIManager uiManager;
+	private int rgb;
 
-	public GameState(Handler handler, UIManager uiManager, WorldManager worldManager) {
+	public GameState(Handler handler, UIManager uiManager) {
 		super(handler);
-		 this.worldManager = worldManager;
+		worldManager = new WorldManager(handler);
 		handler.setWorldManager(worldManager);
 		this.uiManager = uiManager;
-
+		
 	}
 
 	@Override
 	public void tick() {
 		worldManager.tick();
 		uiManager.tick();
-		if (handler.getKeyListener().pausemenu) {
+		if(handler.getKeyListener().pausemenu){
 			setButtons();
 			handler.getWorldManager().getCurrentWorld().setPause(true);
-		} else {
+		}else{
 			uiManager.getObjects().clear();
 			handler.getWorldManager().getCurrentWorld().setPause(false);
 		}
@@ -73,8 +74,5 @@ public class GameState extends State {
 		}));
 	}
 	
-	public void resetWorldManager(){
-		worldManager = new WorldManager(handler);
-	}
 
 }
