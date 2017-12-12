@@ -22,7 +22,7 @@ public class WorldManager implements Serializable {
 		this.handler = handler;
 		player = new Player(handler, 192, 192);
 		wMain = new WorldMain(handler, "assets/worlds/world_test.csv", player);
-		wShop = new World(handler, "assets/worlds/shop.csv", player);
+		wShop = new WorldShop(handler, "assets/worlds/shop.csv", player);
 		currentWorld = wMain;
 		if (handler == null) {
 			System.out.println("no handler1");
