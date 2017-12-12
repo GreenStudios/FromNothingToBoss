@@ -31,7 +31,7 @@ public class Save {
 			ObjectOutputStream o = new ObjectOutputStream(file);
 			
 			entities = handler.getWorldManager().getwMain().getEntityManager().getEntities();
-			items = handler.getWorldManager().getwMain().getItemManager().getItems();
+			items = handler.getWorldManager().getCurrentWorld().getItemManager().getItems();
 			
 			o.writeObject(entities);
 			o.writeObject(items);
