@@ -55,6 +55,7 @@ public class WorldManager implements Serializable {
 	
 	private void setCurrentWorld(World w) {
 		currentWorld = w;
+		currentWorld.spawn();
 	}
 
 	public World getwMain() {

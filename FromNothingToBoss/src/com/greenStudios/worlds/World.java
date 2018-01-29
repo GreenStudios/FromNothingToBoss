@@ -43,6 +43,10 @@ public class World {
 
 		loadWorld(path);
 
+		
+	}
+	
+	public void spawn() {
 		entityManager.getPlayer().setX(spawnX); // Loads spawnX from world1
 		entityManager.getPlayer().setY(spawnY); // Loads spawnY from world1
 	}
