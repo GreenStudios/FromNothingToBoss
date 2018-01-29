@@ -20,10 +20,10 @@ public class WorldManager implements Serializable {
 
 	public WorldManager(Handler handler) {
 		this.handler = handler;
-		player = new Player(handler, 192, 192);
+		player = new Player(handler, 500, 500);
 		wMain = new WorldMain(handler, "assets/worlds/world_test.csv", player);
 		wShop = new WorldShop(handler, "assets/worlds/shop.csv", player);
-		currentWorld = wMain;
+		setCurrentWorld(wMain);
 		if (handler == null) {
 			System.out.println("no handler1");
 		}
