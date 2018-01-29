@@ -3,6 +3,7 @@ package com.greenStudios.worlds;
 import java.awt.Graphics;
 import java.io.Serializable;
 
+import com.greenStudios.entities.Player;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.ui.UIManager;
 
@@ -15,11 +16,13 @@ public class WorldManager implements Serializable {
 	private World wMain, wShop;
 	private Handler handler;
 	private World currentWorld;
+	private Player player;
 
 	public WorldManager(Handler handler) {
 		this.handler = handler;
-		wMain = new WorldMain(handler, "assets/worlds/world_test.csv");
-		wShop = new World(handler, "assets/worlds/shop.csv");
+		player = new Player(handler, 192, 192);
+		wMain = new WorldMain(handler, "assets/worlds/world_test.csv", player);
+		wShop = new WorldShop(handler, "assets/worlds/shop.csv", player);
 		currentWorld = wMain;
 		if (handler == null) {
 			System.out.println("no handler1");
@@ -52,7 +55,6 @@ public class WorldManager implements Serializable {
 	
 	private void setCurrentWorld(World w) {
 		currentWorld = w;
-		
 	}
 
 	public World getwMain() {
@@ -62,5 +64,8 @@ public class WorldManager implements Serializable {
 	public World getwShop() {
 		return wShop;
 	}
-
+	
+	public Player getPlayer() {
+		return player;
+	}
 }

@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.io.Serializable;
 
 import com.greenStudios.entities.EntityManager;
+import com.greenStudios.entities.Player;
 import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.Field;
 import com.greenStudios.entities.statics.House;
@@ -18,8 +19,8 @@ public class WorldMain extends World  implements Serializable{
 	 */
 	private static final long serialVersionUID = 8478270020939504923L;
 
-	public WorldMain(Handler handler, String path) {
-		super(handler, path);
+	public WorldMain(Handler handler, String path, Player player) {
+		super(handler, path, player);
 
 		this.handler = handler;
 		//if (!Load.load) {

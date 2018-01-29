@@ -43,13 +43,7 @@ public class Player extends Creature{
 		bounds.height = 32;
 		
 		//Animations
-		animDown = new Animation(120, Assets.player_down);
-		animUp = new Animation(120, Assets.player_up);
-		animLeft = new Animation(120, Assets.player_left);
-		animRight = new Animation(120, Assets.player_right);
-		
-		inventory = new Inventory(handler);
-		hud = new HUD(handler);
+		loadPlayer();
 	}
 
 	@Override
@@ -73,6 +67,15 @@ public class Player extends Creature{
 		//Inventory
 		inventory.tick();
 		hud.tick();
+	}
+	
+	public void loadPlayer() {
+		animDown = new Animation(120, Assets.player_down);
+		animUp = new Animation(120, Assets.player_up);
+		animLeft = new Animation(120, Assets.player_left);
+		animRight = new Animation(120, Assets.player_right);
+		inventory = new Inventory(handler);
+		hud = new HUD(handler);
 	}
 	
 	private void checkAttacks() {

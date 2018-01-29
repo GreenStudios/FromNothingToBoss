@@ -3,6 +3,7 @@ package com.greenStudios.inventory;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.greenStudios.items.Item;
@@ -10,7 +11,7 @@ import com.greenStudios.java2d.Assets;
 import com.greenStudios.java2d.Text;
 import com.greenStudios.main.Handler;
 
-public class Inventory {
+public class Inventory{
 	
 	private Handler handler;
 	private boolean active = false;

@@ -40,7 +40,7 @@ public abstract class Entity implements Serializable{
 	}
 
 	public enum Type {
-		Player, Terain, House, WeedPlant, Shed
+		Player, Terain, House, WeedPlant, Shed,
 	}
 
 	public abstract void tick();
@@ -167,6 +167,9 @@ public abstract class Entity implements Serializable{
 
 	public boolean getTrigger() {
 		return triggerActive;
+	}
+	public void setHandler(Handler handler) {
+		this.handler = handler;
 	}
 
 }

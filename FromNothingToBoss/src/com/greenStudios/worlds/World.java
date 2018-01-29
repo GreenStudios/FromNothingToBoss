@@ -35,10 +35,10 @@ public class World {
 	// Item
 	protected ItemManager itemManager;
 
-	public World(Handler handler, String path) {
+	public World(Handler handler, String path, Player player) {
 		this.handler = handler;
 
-		entityManager = new EntityManager(handler, new Player(handler, 192, 192));
+		entityManager = new EntityManager(handler, player);
 		itemManager = new ItemManager(handler);
 
 		loadWorld(path);
