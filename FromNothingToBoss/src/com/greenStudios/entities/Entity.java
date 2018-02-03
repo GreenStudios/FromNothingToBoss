@@ -14,11 +14,11 @@ public abstract class Entity implements Serializable{
 	 */
 	private static final long serialVersionUID = -6634115768774495958L;
 	public static final int DEFAULT_HEALTH = 100;
-	public static final int DEFAULT_ARMOR = 0;
+	public static final int DEFAULT_GREENCOIN = 0;
 	protected transient Handler handler;
 	protected float x, y;
 	protected int width, height;
-	protected int health, armor;
+	protected int health, greencoin;
 	protected boolean hurtable = true;
 	protected boolean active = true;
 	protected Rectangle bounds;
@@ -33,7 +33,7 @@ public abstract class Entity implements Serializable{
 		this.width = width;
 		this.height = height;
 		health = DEFAULT_HEALTH;
-		armor = DEFAULT_ARMOR;
+		greencoin = DEFAULT_GREENCOIN;
 		
 		bounds = new Rectangle(0, 0, width, height);
 		trigger = new Rectangle(0, 0, width, height);
