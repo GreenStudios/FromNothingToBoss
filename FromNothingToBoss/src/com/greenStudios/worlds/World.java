@@ -28,6 +28,7 @@ public class World {
 	protected int timer = 0;
 	protected boolean actionallow = true;
 	protected boolean pause = false;
+	protected String worldName;
 
 	// Entities
 	protected EntityManager entityManager;
