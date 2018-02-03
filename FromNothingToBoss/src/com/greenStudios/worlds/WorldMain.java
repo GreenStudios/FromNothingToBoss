@@ -21,7 +21,7 @@ public class WorldMain extends World  implements Serializable{
 
 	public WorldMain(Handler handler, String path, Player player) {
 		super(handler, path, player);
-
+		this.worldName = "main";
 		this.handler = handler;
 		//if (!Load.load) {
 			entityManager.addEntity(new House(handler, 10 * 64, 10 * 64));

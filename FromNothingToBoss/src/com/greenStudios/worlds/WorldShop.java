@@ -22,7 +22,7 @@ public class WorldShop extends World implements Serializable{
 
 	public WorldShop(Handler handler, String path, Player player) {
 		super(handler, path, player);
-		
+		this.worldName = "shop";
 		this.handler = handler;
 		
 		

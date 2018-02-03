@@ -16,7 +16,9 @@ public class Trigger extends StaticEntity{
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
-		
+		if(checkTriggerCollisions(0, 0) == true){
+			onTrigger();
+		}
 	}
 
 	@Override
@@ -35,6 +37,12 @@ public class Trigger extends StaticEntity{
 	public Type getType() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public void onTrigger()
+	{
+		if(handler.getWorldManager().getWorldName() == "shop")
+			handler.getWorldManager().setWorld("main");
 	}
 
 }

@@ -66,6 +66,11 @@ public class WorldManager implements Serializable {
 		return wShop;
 	}
 	
+	public String getWorldName()
+	{
+		return currentWorld.worldName;
+	}
+	
 	public Player getPlayer() {
 		return player;
 	}
