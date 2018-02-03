@@ -2,15 +2,13 @@ package com.greenStudios.entities.statics;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.Serializable;
-
-import com.greenStudios.entities.Entity.Type;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.Handler;
 import com.greenStudios.main.tiles.Tile;
 
 public class House extends StaticEntity{
 	
+	private static final long serialVersionUID = 1L;
 	private boolean drawCollision = true;
 
 	public House(Handler handler, float x, float y) {
