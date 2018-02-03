@@ -42,7 +42,7 @@ public class Player extends Creature{
 		bounds.width = 32;
 		bounds.height = 32;
 		
-		//Animations
+		
 		loadPlayer();
 	}
 
@@ -70,6 +70,7 @@ public class Player extends Creature{
 	}
 	
 	public void loadPlayer() {
+		//Animations
 		animDown = new Animation(120, Assets.player_down);
 		animUp = new Animation(120, Assets.player_up);
 		animLeft = new Animation(120, Assets.player_left);
@@ -252,12 +253,15 @@ public class Player extends Creature{
 		health -= damage;
 	}
 	
-	public int getArmor() {
-		return armor;
+	public int getGreencoin() {
+		return greencoin;
 	}
 	
-	public void setArmor(int damage) {
-		armor -= damage;
+	public void addGreencoin(int i) {
+		greencoin += i;
+	}
+	public void setGreencoin(int i) {
+		greencoin = i;
 	}
 	
 	@Override

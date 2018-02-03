@@ -21,7 +21,7 @@ public class HUD{
 	private int apX = 1050,
 				apY = 992;
 	
-	private int playerHP, playerAP;
+	private int playerHP, playerGC;
 	
 	private int currentWeapon;
 	
@@ -31,13 +31,13 @@ public class HUD{
 	
 	public void tick() {
 		playerHP = handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getHealth();
-		playerAP = handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getArmor();
+		playerGC = handler.getWorldManager().getCurrentWorld().getEntityManager().getPlayer().getGreencoin();
 	}
 	
 	public void render(Graphics g) {
 		g.drawImage(Assets.hud, 0, 0, hudWidth, hudHeight, null);
 		Text.drawString(g, Integer.toString(playerHP), hpX, hpY, true, Color.BLACK, Assets.font28);
-		Text.drawString(g, Integer.toString(playerAP), apX, apY, true, Color.BLACK, Assets.font28);
+		Text.drawString(g, Integer.toString(playerGC), apX, apY, true, Color.BLACK, Assets.font28);
 	}
 	
 	//Getters & Setters
