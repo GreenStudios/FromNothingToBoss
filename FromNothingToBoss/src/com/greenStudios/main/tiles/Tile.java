@@ -36,9 +36,12 @@ public class Tile {
 	public static Tile water1 = new Water1(10);
 	
 	//Street
-	//public static Tile straightStreet = new straightStreet(20);
-	public static Tile sideStreet1 = new sideStreet1(21);
-	public static Tile sideStreet2 = new sideStreet2(22);
+	public static Tile straightStreet1 = new straightStreet(30);
+	public static Tile straightStreet2 = new straightStreet(31);
+	public static Tile sideStreet1 = new sideStreet1(32);
+	public static Tile sideStreet2 = new sideStreet2(33);
+	public static Tile sideStreet3 = new sideStreet1(34);
+	public static Tile sideStreet4 = new sideStreet2(35);
 	
 	//Misc
 	public static Tile voidTile = new VoidTile(20);
