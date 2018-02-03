@@ -15,11 +15,11 @@ public class HUD{
 	private int hudWidth = 1920,
 				hudHeight = 1080;
 	
-	private int hpX = 750,
-				hpY = 992;
+	private int hpX = 115,
+				hpY = 980;
 	
-	private int apX = 1050,
-				apY = 992;
+	private int gcX = 243,
+				gcY = 980;
 	
 	private int playerHP, playerGC;
 	
@@ -35,9 +35,9 @@ public class HUD{
 	}
 	
 	public void render(Graphics g) {
-		g.drawImage(Assets.hud, 0, 0, hudWidth, hudHeight, null);
+		g.drawImage(Assets.hud, 0, -50, hudWidth, hudHeight, null);
 		Text.drawString(g, Integer.toString(playerHP), hpX, hpY, true, Color.BLACK, Assets.font28);
-		Text.drawString(g, Integer.toString(playerGC), apX, apY, true, Color.BLACK, Assets.font28);
+		Text.drawString(g, Integer.toString(playerGC), gcX, gcY, true, Color.BLACK, Assets.font28);
 	}
 	
 	//Getters & Setters
