@@ -1,5 +1,6 @@
 package com.greenStudios.entities.statics;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import com.greenStudios.main.Handler;
@@ -11,6 +12,13 @@ public class Trigger extends StaticEntity{
 	public Trigger(Handler handler, float x, float y, int width, int height) {
 		super(handler, x, y, width, height);
 		// TODO Auto-generated constructor stub
+		
+		trigger.x = (int) x;
+		trigger.y = (int) y;
+		trigger.width = width;
+		trigger.height = height;
+		
+		hurtable = false;
 	}
 
 	@Override
@@ -18,13 +26,15 @@ public class Trigger extends StaticEntity{
 		// TODO Auto-generated method stub
 		if(checkTriggerCollisions(0, 0) == true){
 			onTrigger();
+			System.out.println("Trigger");
 		}
 	}
 
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		
+		g.setColor(Color.blue);
+		g.fillRect((int) (x + trigger.x - handler.getGameCamera().getxOffset()), (int) (y + trigger.y - handler.getGameCamera().getyOffset()), trigger.width, trigger.height);
 	}
 
 	@Override

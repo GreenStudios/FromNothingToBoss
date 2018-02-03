@@ -9,6 +9,7 @@ import com.greenStudios.entities.statics.BrokenHouse;
 import com.greenStudios.entities.statics.Field;
 import com.greenStudios.entities.statics.House;
 import com.greenStudios.entities.statics.House_Jonah1;
+import com.greenStudios.entities.statics.Trigger;
 import com.greenStudios.main.Handler;
 
 public class WorldShop extends World implements Serializable{
@@ -25,9 +26,7 @@ public class WorldShop extends World implements Serializable{
 		this.worldName = "shop";
 		this.handler = handler;
 		
-		
-		
-		
+		entityManager.addEntity(new Trigger(handler, 14 * 64, 12 * 64, 40, 20));
 	}
 	
 	
