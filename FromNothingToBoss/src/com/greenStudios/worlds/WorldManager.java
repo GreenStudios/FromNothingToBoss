@@ -20,7 +20,7 @@ public class WorldManager implements Serializable {
 
 	public WorldManager(Handler handler) {
 		this.handler = handler;
-		player = new Player(handler, 500, 500);
+		player = new Player(handler, 0, 0);
 		wMain = new WorldMain(handler, "assets/worlds/mexico.csv", player);
 		wShop = new WorldShop(handler, "assets/worlds/shop.csv", player);
 		setCurrentWorld(wMain);

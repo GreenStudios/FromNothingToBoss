@@ -20,7 +20,7 @@ public class Display {
 	private GraphicsDevice device;
 
 	public Display() {
-		title = "From Nothing To Boss";
+		title = "Nothing To Boss";
 		width = 1920;
 		height = 1080;
 		

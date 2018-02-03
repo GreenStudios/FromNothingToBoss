@@ -24,12 +24,12 @@ public class WorldMain extends World  implements Serializable{
 
 		this.handler = handler;
 		//if (!Load.load) {
-			entityManager.addEntity(new House(handler, 8 * 64, 155));
+			entityManager.addEntity(new House(handler, 10 * 64, 10 * 64));
 			// entityManager.addEntity(new WeedPlant(handler, 7*64, 4*64));
 			// entityManager.addEntity(new Shed(handler, 14*64, 3*64));
-			entityManager.addEntity(new Field(handler, 11 * 64, 11 * 64));
-			entityManager.addEntity(new House_Jonah1(handler, 2 * 64, 2 * 64));
-			entityManager.addEntity(new BrokenHouse(handler, 18 * 64, 2 * 64));
+			entityManager.addEntity(new Field(handler, 15 * 64, 10 * 64));
+			entityManager.addEntity(new House_Jonah1(handler, 20 * 64, 10 * 64));
+			entityManager.addEntity(new BrokenHouse(handler, 25 * 64, 10 * 64));
 		//}
 
 	}
