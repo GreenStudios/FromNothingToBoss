@@ -8,13 +8,14 @@ import com.greenStudios.main.Handler;
 public class Trigger extends StaticEntity{
 
 	private static final long serialVersionUID = 6554996824906643936L;
+	private boolean drawCollision = true;
 
 	public Trigger(Handler handler, float x, float y, int width, int height) {
 		super(handler, x, y, width, height);
 		// TODO Auto-generated constructor stub
-		
-		trigger.x = (int) x;
-		trigger.y = (int) y;
+		collision = false;
+		trigger.x = 0;
+		trigger.y = 0;
 		trigger.width = width;
 		trigger.height = height;
 		
@@ -28,13 +29,19 @@ public class Trigger extends StaticEntity{
 			onTrigger();
 			System.out.println("Trigger");
 		}
+		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		g.setColor(Color.blue);
-		g.fillRect((int) (x + trigger.x - handler.getGameCamera().getxOffset()), (int) (y + trigger.y - handler.getGameCamera().getyOffset()), trigger.width, trigger.height);
+		if(drawCollision) {
+			g.setColor(Color.red);
+			g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()), (int) (y + bounds.y - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+			
+			g.setColor(Color.blue);
+			g.fillRect((int) (x + trigger.x - handler.getGameCamera().getxOffset()), (int) (y + trigger.y - handler.getGameCamera().getyOffset()), trigger.width, trigger.height);
+		}
 	}
 
 	@Override
@@ -51,8 +58,7 @@ public class Trigger extends StaticEntity{
 	
 	public void onTrigger()
 	{
-		if(handler.getWorldManager().getWorldName() == "shop")
-			handler.getWorldManager().setWorld("main");
+		handler.getWorldManager().setWorld(handler.getWorldManager().getwMain());
 	}
 
 }

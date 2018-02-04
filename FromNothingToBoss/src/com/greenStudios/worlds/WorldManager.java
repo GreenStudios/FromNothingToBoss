@@ -23,24 +23,14 @@ public class WorldManager implements Serializable {
 		player = new Player(handler, 0, 0);
 		wMain = new WorldMain(handler, "assets/worlds/mexico.csv", player);
 		wShop = new WorldShop(handler, "assets/worlds/shop.csv", player);
-		setCurrentWorld(wMain);
+		setWorld(wMain);
 		if (handler == null) {
 			System.out.println("no handler1");
 		}
 		setWorld(currentWorld);
 	}
 
-	public void setWorld(String world) {
-
-		if(world == "shop") {
-			setCurrentWorld(wShop);
-		}
-	}
-
-	public void setWorld(World w) {
-		currentWorld = w;
-	}
-
+	
 	public void tick() {
 		currentWorld.tick();
 	}
@@ -53,7 +43,7 @@ public class WorldManager implements Serializable {
 		return currentWorld;
 	}
 	
-	private void setCurrentWorld(World w) {
+	public void setWorld(World w) {
 		currentWorld = w;
 		currentWorld.spawn();
 	}

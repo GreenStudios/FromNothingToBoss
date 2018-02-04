@@ -58,7 +58,7 @@ public class House extends StaticEntity{
 	}
 	
 	public void onTrigger() {
-		handler.getWorldManager().setWorld("shop");
+		handler.getWorldManager().setWorld(handler.getWorldManager().getwShop());
 	}
 
 }
