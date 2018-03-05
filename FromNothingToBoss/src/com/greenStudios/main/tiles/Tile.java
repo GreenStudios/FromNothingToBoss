@@ -10,9 +10,12 @@ import com.greenStudios.main.tiles.grass.Grass4;
 import com.greenStudios.main.tiles.grass.Grass5;
 import com.greenStudios.main.tiles.grass.Grass6;
 import com.greenStudios.main.tiles.misc.VoidTile;
-import com.greenStudios.main.tiles.street.sideStreet1;
-import com.greenStudios.main.tiles.street.sideStreet2;
-import com.greenStudios.main.tiles.street.straightStreet;
+import com.greenStudios.main.tiles.street.SideStreet1;
+import com.greenStudios.main.tiles.street.SideStreet2;
+import com.greenStudios.main.tiles.street.SideStreet3;
+import com.greenStudios.main.tiles.street.SideStreet4;
+import com.greenStudios.main.tiles.street.StraightStreet1;
+import com.greenStudios.main.tiles.street.StraightStreet2;
 import com.greenStudios.main.tiles.water.Water1;
 
 public class Tile {
@@ -36,12 +39,12 @@ public class Tile {
 	public static Tile water1 = new Water1(10);
 	
 	//Street
-	public static Tile straightStreet1 = new straightStreet(30);
-	public static Tile straightStreet2 = new straightStreet(31);
-	public static Tile sideStreet1 = new sideStreet1(32);
-	public static Tile sideStreet2 = new sideStreet2(33);
-	public static Tile sideStreet3 = new sideStreet1(34);
-	public static Tile sideStreet4 = new sideStreet2(35);
+	public static Tile straightStreet1 = new StraightStreet1(30);
+	public static Tile straightStreet2 = new StraightStreet2(31);
+	public static Tile sideStreet1 = new SideStreet1(32);
+	public static Tile sideStreet2 = new SideStreet2(33);
+	public static Tile sideStreet3 = new SideStreet3(34);
+	public static Tile sideStreet4 = new SideStreet4(35);
 	
 	//Misc
 	public static Tile voidTile = new VoidTile(20);

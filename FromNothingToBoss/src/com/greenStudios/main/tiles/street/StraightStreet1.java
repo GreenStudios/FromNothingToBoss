@@ -5,10 +5,10 @@ import java.awt.image.BufferedImage;
 import com.greenStudios.java2d.Assets;
 import com.greenStudios.main.tiles.Tile;
 
-public class sideStreet2 extends Tile{
+public class StraightStreet1 extends Tile{
 	
-	public sideStreet2(int id) {
-		super(Assets.sideStreet2, id);
+	public StraightStreet1(int id) {
+		super(Assets.straightStreet1, id);
 	}
 	
 
