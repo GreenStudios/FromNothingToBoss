@@ -23,6 +23,7 @@ public class Game implements Runnable, Serializable{
 	private static final long serialVersionUID = 5641471975823028179L;
 	
 	//Frame
+	//Daniel stinkt mies nach kacke
 	private final Display display;
 	
 	//Listeners
