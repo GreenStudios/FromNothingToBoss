@@ -20,6 +20,7 @@ public class Trigger extends StaticEntity{
 		trigger.height = height;
 		
 		hurtable = false;
+		drawCollision = true;
 	}
 
 	@Override

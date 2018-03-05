@@ -26,7 +26,7 @@ public class WorldShop extends World implements Serializable{
 		this.worldName = "shop";
 		this.handler = handler;
 		
-		entityManager.addEntity(new Trigger(handler, 14 * 64, 12 * 64, 40, 20));
+		entityManager.addEntity(new Trigger(handler, 15 * 64, 16 * 64 - 5, 40, 20));
 	}
 	
 	
